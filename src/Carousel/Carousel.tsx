@@ -4,41 +4,26 @@ import { CarouselComponentProps } from './Carousel.types';
 
 import './Carousel.css';
 
-const CarouselComponent: React.FC<CarouselComponentProps> = ({
-  width,
-  height,
-  borderRadius,
-  navigationPosition,
-  dotSize,
-  dotColor,
-  dotColorHover,
-  dotMargin,
-  tabsData,
-  textPosition,
-  textWidth,
-  dotMarginMobile,
-  textContentPadding,
-  imgPosition,
-  backgroundPosition,
-}) => {
+const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
   const [currentTab, setCurrentTab] = useState<number>(0);
 
   const styleCarousel = {
-    '--width': width + 'vw',
-    height: height + 'vh',
-    '--borderRadius': borderRadius + 'px',
-    '--dotSize': dotSize + 'px',
-    '--dotColor': dotColor,
-    '--dotColorHover': dotColorHover,
-    '--dotMargin': dotMargin + 'vw',
-    '--dotMarginMobile': dotMarginMobile + 'vw',
-    '--textWidth': textWidth + 'vw',
-    '--text-content-padding': textContentPadding + 'px',
-    '--img-position-vertical': imgPosition && imgPosition.split(' ')[1] + 'px',
+    '--width': props.width + 'vw',
+    height: props.height + 'vh',
+    '--borderRadius': props.borderRadius + 'px',
+    '--dotSize': props.dotSize + 'px',
+    '--dotColor': props.dotColor,
+    '--dotColorHover': props.dotColorHover,
+    '--dotMargin': props.dotMargin + 'vw',
+    '--dotMarginMobile': props.dotMarginMobile + 'vw',
+    '--textWidth': props.textWidth + 'vw',
+    '--text-content-padding': props.textContentPadding + 'px',
+    '--img-position-vertical':
+      props.imgPosition && props.imgPosition.split(' ')[1] + 'px',
     '--img-position-horizontal':
-      imgPosition && imgPosition.split(' ')[0] + 'px',
-    '--background-position': backgroundPosition,
+      props.imgPosition && props.imgPosition.split(' ')[0] + 'px',
+    '--background-position': props.backgroundPosition,
   };
 
   const toggleTab = useCallback(
@@ -54,7 +39,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = ({
   );
 
   const imageStyles = [];
-  tabsData.forEach((tab, index) => {
+  props.tabsData.forEach((tab, index) => {
     imageStyles[index] = classnames(
       'image-content',
       { 'is-active-image': currentTab === index },
@@ -105,20 +90,15 @@ const CarouselComponent: React.FC<CarouselComponentProps> = ({
     <div style={styleCarousel} className='carousel-wrapper'>
       <div className='image-card'>
         <div className='slides-card'>
-          {tabsData.map((tab, index) => (
+          {props.tabsData.map((tab, index) => (
             <div
               aria-hidden={currentTab !== index}
               key={`image-${index}`}
-              className={`${imageStyles[index]} ${textPosition}`}
-              style={
-                {
-                  backgroundImage: `url(${tab.image})`,
-                  backgroundColor: `${tab.color}`,
-                }
-                // tab.image
-                //   ? { backgroundImage: `url(${tab.image})` }
-                //   : { backgroundColor: `${tab.color}` }
-              }
+              className={`${imageStyles[index]} ${props.textPosition}`}
+              style={{
+                backgroundImage: `url(${tab.image})`,
+                backgroundColor: `${tab.color}`,
+              }}
             >
               {tab.text && (
                 <div className='text'>
@@ -130,11 +110,13 @@ const CarouselComponent: React.FC<CarouselComponentProps> = ({
         </div>
         <div
           className={
-            tabsData.length > 1 ? `nav-card ${navigationPosition}` : 'empty-nav'
+            props.tabsData.length > 1
+              ? `nav-card ${props.navigationPosition}`
+              : 'empty-nav'
           }
         >
-          {tabsData.length > 1 &&
-            tabsData.map((tab, index) => (
+          {props.tabsData.length > 1 &&
+            props.tabsData.map((tab, index) => (
               <button
                 aria-selected={index === currentTab}
                 aria-controls={`tab-panel-${index}`}

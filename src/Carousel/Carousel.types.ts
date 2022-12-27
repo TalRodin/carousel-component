@@ -1,15 +1,24 @@
 import { ReactNode } from "react";
 
+type TabData = {
+  tabLabel: string;
+  color:string;
+  image:string;
+  text:string;
+  imgHorizontalPoint?:string;
+  imgVerticalPoint?:string;
+}
+
 export interface CarouselComponentProps {
   width: number;
   height: number;
-  borderRadius?: number;
+  tabsData: Array<TabData>;
   navigationPosition: string;
+  borderRadius?: number; 
   dotSize?: number;
   dotColor?: string;
   dotColorHover?: string;
   dotMargin?: number;
-  tabsData: Array<any>;
   textPosition?: string;
   textWidth?: number;
   dotMarginMobile?: number;
