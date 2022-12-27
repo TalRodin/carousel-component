@@ -1,7 +1,6 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import classnames from 'classnames';
 import { CarouselComponentProps } from './Carousel.types';
-
 import './Carousel.css';
 
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
@@ -100,6 +99,17 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                 backgroundColor: `${tab.color}`,
               }}
             >
+              {tab.video && (
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  id='myVideo'
+                  className='video-wrapper'
+                >
+                  <source src={tab.video} type='video/mp4' />
+                </video>
+              )}
               {tab.text && (
                 <div className='text'>
                   <div className='text-content'>{tab.text}</div>

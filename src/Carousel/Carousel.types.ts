@@ -2,9 +2,10 @@ import { ReactNode } from "react";
 
 type TabData = {
   tabLabel: string;
-  color:string;
-  image:string;
-  text:string;
+  color?:string;
+  image?:string;
+  video?:string;
+  text?:string;
   imgHorizontalPoint?:string;
   imgVerticalPoint?:string;
 }
