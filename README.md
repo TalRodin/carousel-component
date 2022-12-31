@@ -26,7 +26,7 @@ import { CarouselComponent } from 'gallery-ar-component';
 
 Pass data for each TAB in the format below:
 
-```JSON
+```js
 const tabsData = [
   {
     tabLabel: 'yourTabLabelName',
