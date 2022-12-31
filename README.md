@@ -8,6 +8,7 @@
   - [Table of contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Properties](#properties)
   - [License](#license)
 
 ## Installation
@@ -45,6 +46,29 @@ const tabsData = [
   ...
 ];
 ```
+
+Example:
+
+```js
+<CarouselComponent
+  tabsData={tabsData}
+  width={50}
+  height={60}
+  navigationPosition={'bottom'}
+  dotSize={4}
+  dotMargin={1}
+/>
+```
+
+### Properties
+
+| Properties             | Requirement | Variations                               | Description                          |
+| ---------------------- | ----------- | ---------------------------------------- | ------------------------------------ |
+| **tabsData**           | `True`      | format displayed above - [Usage](#usage) | _Data for each tab to display_       |
+| **width**              | `True`      | number                                   | _Width of the Gallery in `vw`_       |
+| **height**             | `True`      | number                                   | _Height of the Gallery in `vh`_      |
+| **navigationPosition** | `True`      | 'bottom', 'top', 'left', 'right'         | _Height of the Gallery_              |
+| **dotSize**            | `True`      | number                                   | _Size of navigation buttons in `px`_ |
 
 ### Author
 
