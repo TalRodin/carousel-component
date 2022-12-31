@@ -26,7 +26,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   };
 
   const toggleTab = useCallback(
-    (e: any) => {
+    (e) => {
       const index = parseInt(e.target.dataset.index);
       if (index === currentTab) {
         return;

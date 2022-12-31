@@ -1,5 +1,5 @@
 {
-  "name": "carousel-component",
+  "name": "gallery-ar-component",
   "version": "1.0.0",
   "main": "build/index.js",
   "module": "build/index.esm.js",
@@ -7,7 +7,7 @@
     "build"
   ],
   "types": "build/index.d.ts",
-  "description": "",
+  "description": "A carousel/gallery build using Typescript, CSS, Storybook, Rollup.",
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
