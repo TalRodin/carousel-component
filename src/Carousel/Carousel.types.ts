@@ -20,11 +20,12 @@ export interface CarouselComponentProps {
   dotColor?: string;
   dotColorHover?: string;
   dotColorActive?: string;
-  dotMargin?: number;
+  dotMargin?: string;
   textPosition?: string;
   textWidth?: number;
   dotMarginMobile?: number;
   textContentPadding?: number;
   imgPosition?:string;
   backgroundPosition?:string;
+  dotRadius?:number;
 }

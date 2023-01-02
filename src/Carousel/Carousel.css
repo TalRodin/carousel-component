@@ -80,7 +80,7 @@
     padding:var(--dotSize);
     background-color: var(--dotColor);
     border: none;
-    border-radius: 25px;
+    border-radius: var(--dotRadius);
     margin:var(--dotMargin);
 }
 .control-card.is-active{

@@ -47,12 +47,13 @@ export const SmallCarousel = () => (
     width={50}
     height={60}
     borderRadius={10}
-    navigationPosition={'right-bottom'}
-    dotSize={4}
+    navigationPosition={'bottom'}
+    dotSize={8}
+    dotRadius={2}
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}
     dotColorActive={'#fff'}
-    dotMargin={1}
+    dotMargin={'2 1'}
     dotMarginMobile={4}
     tabsData={tabsData}
     textPosition={'left-center'}
@@ -73,7 +74,7 @@ export const LargeCarousel = () => (
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}
     dotColorActive={'#fff'}
-    dotMargin={1}
+    dotMargin={'1 1 1 1'}
     dotMarginMobile={4}
     tabsData={tabsData}
     textPosition={'left-center'}

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import classnames from 'classnames';
 import { CarouselComponentProps } from './Carousel.types';
 import './Carousel.css';
@@ -15,7 +15,12 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--dotColor': props.dotColor,
     '--dotColorHover': props.dotColorHover,
     '--dotColorActive': props.dotColorActive,
-    '--dotMargin': props.dotMargin + 'vw',
+    '--dotMargin': props.dotMargin
+      .split(' ')
+      .map((v: string) => {
+        return v + 'vw';
+      })
+      .join(' '),
     '--dotMarginMobile': props.dotMarginMobile + 'vw',
     '--textWidth': props.textWidth + 'vw',
     '--text-content-padding': props.textContentPadding + 'px',
@@ -24,6 +29,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--img-position-horizontal':
       props.imgPosition && props.imgPosition.split(' ')[0] + 'px',
     '--background-position': props.backgroundPosition,
+    '--dotRadius': props.dotRadius + 'px',
   };
 
   const toggleTab = useCallback(
