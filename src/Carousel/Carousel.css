@@ -83,6 +83,9 @@
     border-radius: 25px;
     margin:var(--dotMargin);
 }
+.control-card.is-active{
+  background-color: var(--dotColorActive);
+}
 
 .control-card:hover{
   background-color: var(--dotColorHover);
@@ -90,6 +93,7 @@
 .control-card:focus{
   background-color: var(--dotColorHover);
 }
+
 
 .image-content {
   position: absolute;

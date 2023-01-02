@@ -14,6 +14,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--dotSize': props.dotSize + 'px',
     '--dotColor': props.dotColor,
     '--dotColorHover': props.dotColorHover,
+    '--dotColorActive': props.dotColorActive,
     '--dotMargin': props.dotMargin + 'vw',
     '--dotMarginMobile': props.dotMarginMobile + 'vw',
     '--textWidth': props.textWidth + 'vw',

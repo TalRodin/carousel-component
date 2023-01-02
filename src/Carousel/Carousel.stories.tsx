@@ -51,6 +51,7 @@ export const SmallCarousel = () => (
     dotSize={4}
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}
+    dotColorActive={'#fff'}
     dotMargin={1}
     dotMarginMobile={4}
     tabsData={tabsData}
@@ -71,6 +72,7 @@ export const LargeCarousel = () => (
     dotSize={4}
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}
+    dotColorActive={'#fff'}
     dotMargin={1}
     dotMarginMobile={4}
     tabsData={tabsData}

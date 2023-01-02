@@ -74,6 +74,7 @@ Example:
 | **dotColorHover**      |             | hex color, string                                                                                                                              | _Color of buttons_                     |
 | **dotMargin**          |             | number                                                                                                                                         | _Margin around the buttons in `vw`_    |
 | **textPosition**       |             | 'left-center', 'center, 'right-center', 'top-center', 'bottom-center'                                                                          | _Position of text_                     |
+| **dotColorActive**     |             | hex color, string                                                                                                                              | Color of active button                 |
 
 ### Author
 

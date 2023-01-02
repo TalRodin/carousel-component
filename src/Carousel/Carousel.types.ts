@@ -19,6 +19,7 @@ export interface CarouselComponentProps {
   dotSize?: number;
   dotColor?: string;
   dotColorHover?: string;
+  dotColorActive?: string;
   dotMargin?: number;
   textPosition?: string;
   textWidth?: number;
