@@ -47,7 +47,7 @@ export const SmallCarousel = () => (
     width={50}
     height={60}
     borderRadius={10}
-    navigationPosition={'bottom'}
+    navigationPosition={'right-bottom'}
     dotSize={4}
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}

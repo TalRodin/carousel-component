@@ -62,18 +62,18 @@ Example:
 
 ### Properties
 
-| Properties             | Requirement | Variations                                                            | Description                            |
-| ---------------------- | ----------- | --------------------------------------------------------------------- | -------------------------------------- |
-| **tabsData**           | `Required`  | format displayed above - [Usage](#usage)                              | _Data for each tab to display_         |
-| **width**              | `Required`  | number                                                                | _Width of the Gallery in `vw`_         |
-| **height**             | `Required`  | number                                                                | _Height of the Gallery in `vh`_        |
-| **navigationPosition** | `Required`  | 'bottom', 'top', 'left', 'right'                                      | _Height of the Gallery_                |
-| **dotSize**            | `Required`  | number                                                                | _Size of navigation buttons in `px`_   |
-| **borderRadius**       |             | number                                                                | _Border radius of the gallery in `px`_ |
-| **dotColor**           |             | hex color, string                                                     | _Color of buttons_                     |
-| **dotColorHover**      |             | hex color, string                                                     | _Color of buttons_                     |
-| **dotMargin**          |             | number                                                                | _Margin around the buttons in `vw`_    |
-| **textPosition**       |             | 'left-center', 'center, 'right-center', 'top-center', 'bottom-center' | _Position of text_                     |
+| Properties             | Requirement | Variations                                                                                                                                     | Description                            |
+| ---------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| **tabsData**           | `Required`  | format displayed above - [Usage](#usage)                                                                                                       | _Data for each tab to display_         |
+| **width**              | `Required`  | number                                                                                                                                         | _Width of the Gallery in `vw`_         |
+| **height**             | `Required`  | number                                                                                                                                         | _Height of the Gallery in `vh`_        |
+| **navigationPosition** | `Required`  | 'bottom', 'bottom-left','bottom-right', 'top', 'top-left', 'top-right', 'left', 'left-top', 'left-bottom','right', 'right-top', 'right-bottom' | _Navigation Position_                  |
+| **dotSize**            | `Required`  | number                                                                                                                                         | _Size of navigation buttons in `px`_   |
+| **borderRadius**       |             | number                                                                                                                                         | _Border radius of the gallery in `px`_ |
+| **dotColor**           |             | hex color, string                                                                                                                              | _Color of buttons_                     |
+| **dotColorHover**      |             | hex color, string                                                                                                                              | _Color of buttons_                     |
+| **dotMargin**          |             | number                                                                                                                                         | _Margin around the buttons in `vw`_    |
+| **textPosition**       |             | 'left-center', 'center, 'right-center', 'top-center', 'bottom-center'                                                                          | _Position of text_                     |
 
 ### Author
 

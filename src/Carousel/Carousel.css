@@ -21,21 +21,42 @@
      width:auto;
 }
 
+/* Navigation position */
 .nav-card.bottom{
   bottom: 0;
   justify-content: center;
   width:100%;
+}
+.nav-card.bottom-left{
+  bottom: 0;
+}
+.nav-card.bottom-right{
+  right: 0;
+  bottom: 0;
 }
 .nav-card.top{
   top: 0;
   justify-content: center;
   width:100%;
 }
+.nav-card.top-left{
+  
+}
+.nav-card.top-right{
+  right: 0;
+}
 .nav-card.left{
-  left: 0;
   flex-direction: column;
   height:100%;
   justify-content: center;
+}
+.nav-card.left-top{
+  flex-direction: column;
+  top:0;
+}
+.nav-card.left-bottom{
+  flex-direction: column;
+  bottom:0;
 }
 .nav-card.right{
   right: 0;
@@ -43,6 +64,17 @@
   height:100%;
   justify-content: center;
 }
+.nav-card.right-top{
+  right: 0;
+  flex-direction: column;
+  top:0
+}
+.nav-card.right-bottom{
+  right: 0;
+  flex-direction: column;
+  bottom:0;
+}
+
 
 .control-card{
     padding:var(--dotSize);
