@@ -47,6 +47,15 @@ const tabsData = [
 ];
 ```
 
+Tabs Data accepts:
+
+- tabLabel
+- color
+- image
+- video
+- text
+- htmlContent
+
 Example:
 
 ```js
@@ -76,6 +85,7 @@ Example:
 | **textPosition**       |             | 'left-center', 'center, 'right-center', 'top-center', 'bottom-center'                                                                          | _Position of text_                                                                                                             |
 | **dotColorActive**     |             | hex color, string                                                                                                                              | Color of active button                                                                                                         |
 | **dotRadius**          |             | number                                                                                                                                         | Radius of buttons                                                                                                              |
+| **contentDirection**   |             | 'row', 'column'                                                                                                                                | Direction of content if dataTabs contains text and html content                                                                |
 
 ### Author
 

@@ -7,6 +7,10 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
   const [currentTab, setCurrentTab] = useState<number>(0);
 
+  useEffect(() => {
+    console.log(props.tabsData);
+  }, []);
+
   const styleCarousel = {
     '--width': props.width + 'vw',
     height: props.height + 'vh',
@@ -30,6 +34,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
       props.imgPosition && props.imgPosition.split(' ')[0] + 'px',
     '--background-position': props.backgroundPosition,
     '--dotRadius': props.dotRadius + 'px',
+    '--content-direction': props.contentDirection,
   };
 
   const toggleTab = useCallback(
@@ -100,7 +105,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
             <div
               aria-hidden={currentTab !== index}
               key={`image-${index}`}
-              className={`${imageStyles[index]} ${props.textPosition}`}
+              className={`${imageStyles[index]} ${props.textPosition} `}
               style={{
                 backgroundImage: `url(${tab.image})`,
                 backgroundColor: `${tab.color}`,
@@ -117,11 +122,17 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                   <source src={tab.video} type='video/mp4' />
                 </video>
               )}
-              {tab.text && (
-                <div className='text'>
-                  <div className='text-content'>{tab.text}</div>
+              <div className='text'>
+                <div className={`text-content ${props.contentDirection}`}>
+                  {tab.text && <div>{tab.text}</div>}
+                  {tab.htmlContent && (
+                    <div
+                      className={`html-content ${props.contentDirection}`}
+                      dangerouslySetInnerHTML={{ __html: tab.htmlContent }}
+                    ></div>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>

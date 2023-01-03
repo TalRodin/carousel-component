@@ -113,6 +113,15 @@
 }
 .text-content {
   padding: var(--text-content-padding);
+  display: flex;
+  flex-direction: var(--content-direction);
+}
+.html-content.row{
+  margin:0px 12px;
+}
+.html-content.column{
+  margin:12px 0px;
+ 
 }
 
 .image-content.is-active-image {
@@ -135,6 +144,7 @@
   align-items: center;
 
 }
+
 .image-content.top-center{
   justify-content: center;
   
@@ -162,6 +172,17 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 600px) {
   .carousel-wrapper{
