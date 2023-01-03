@@ -7,9 +7,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
   const [currentTab, setCurrentTab] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    console.log(props);
-  }, []);
 
   const styleCarousel = {
     '--width': props.width + 'vw',
