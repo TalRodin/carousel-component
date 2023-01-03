@@ -124,6 +124,8 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     { 'is-aligned-bottom': props.splitImageAlignment === 'bottom' }
   );
 
+  useEffect(() => {}, []);
+
   return (
     <div style={styleCarousel} className='carousel-wrapper'>
       <div className={containerTear} ref={containerRef}>
@@ -153,9 +155,14 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
               )}
               <div className='text'>
                 <div className={`text-content ${props.contentDirection}`}>
-                  {tab.text && <div>{tab.text}</div>}
+                  {tab.text && (
+                    <div tabIndex={index === currentTab ? 0 : -1}>
+                      {tab.text}
+                    </div>
+                  )}
                   {tab.htmlContent && (
                     <div
+                      tabIndex={index === currentTab ? 0 : -1}
                       className={`html-content ${props.contentDirection}`}
                       dangerouslySetInnerHTML={{ __html: tab.htmlContent }}
                     ></div>
