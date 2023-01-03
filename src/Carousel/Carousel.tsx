@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import { CarouselComponentProps } from './Carousel.types';
 import './Carousel.css';
@@ -6,9 +6,9 @@ import './Carousel.css';
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
   const [currentTab, setCurrentTab] = useState<number>(0);
-
+  const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    console.log(props.tabsData);
+    console.log(props);
   }, []);
 
   const styleCarousel = {
@@ -97,15 +97,47 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     );
   });
 
+  useEffect(() => {
+    if (props.tearFile) {
+      let file = props.tearFile;
+      if (containerRef.current) {
+        if (props.splitImageAlignment === 'left') {
+          containerRef.current.style.maskImage = `url(${file}), linear-gradient(to right, black 100%, black 0)`;
+          containerRef.current.style.webkitMaskImage = `url(${file}), linear-gradient(to right, black 100%, black 0)`;
+        } else if (props.splitImageAlignment === 'right') {
+          containerRef.current.style.maskImage = `url(${file}), linear-gradient(to left, black 0%, black 100%)`;
+          containerRef.current.style.webkitMaskImage = `url(${file}), linear-gradient(to left, black 0%, black 100%)`;
+        } else if (props.splitImageAlignment === 'bottom') {
+          containerRef.current.style.maskImage = `url(${file}), linear-gradient(to bottom, black 0%, black 100%)`;
+          containerRef.current.style.webkitMaskImage = `url(${file}), linear-gradient(to bottom, black 0%, black 100%)`;
+        } else if (props.splitImageAlignment === 'top') {
+          containerRef.current.style.maskImage = `url(${file}), linear-gradient(to top, black 100%, black 0)`;
+          containerRef.current.style.webkitMaskImage = `url(${file}), linear-gradient(to top, black 100%, black 0)`;
+        }
+      }
+    }
+  }, [props.splitImageAlignment]);
+
+  const containerTear = classnames(
+    'image-card',
+    { 'has-tear': props.tearFile },
+    { 'is-aligned-left': props.splitImageAlignment === 'left' },
+    { 'is-aligned-right': props.splitImageAlignment === 'right' },
+    { 'is-aligned-top': props.splitImageAlignment === 'top' },
+    { 'is-aligned-bottom': props.splitImageAlignment === 'bottom' }
+  );
+
   return (
     <div style={styleCarousel} className='carousel-wrapper'>
-      <div className='image-card'>
+      <div className={containerTear} ref={containerRef}>
         <div className='slides-card'>
           {props.tabsData.map((tab, index) => (
             <div
               aria-hidden={currentTab !== index}
               key={`image-${index}`}
-              className={`${imageStyles[index]} ${props.textPosition} `}
+              className={`${imageStyles[index]} ${props.textPosition} 
+         
+              `}
               style={{
                 backgroundImage: `url(${tab.image})`,
                 backgroundColor: `${tab.color}`,

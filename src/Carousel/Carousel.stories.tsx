@@ -1,5 +1,9 @@
 import React from 'react';
 import CarouselComponent from './Carousel';
+import vectorImg from './images/vector.png';
+import vectorImgRight from './images/vector-right.png';
+import vectorImgTop from './images/vector-top.png';
+import vectorImgBottom from './images/vector-bottom.png';
 
 export default {
   title: 'CarouselComponent',
@@ -62,8 +66,10 @@ export const SmallCarousel = () => (
     textWidth={40}
     textContentPadding={24}
     contentDirection={'row'}
-    // imgPosition={'100 50'}
-    // backgroundPosition={'right 35px bottom 45px'}
+    tearFile={vectorImgRight}
+    splitImageAlignment={'right'}
+    imgPosition={''}
+    backgroundPosition={''}
   />
 );
 
@@ -83,7 +89,7 @@ export const LargeCarousel = () => (
     textPosition={'left-center'}
     textWidth={24}
     textContentPadding={24}
-    // imgPosition={'50 50'}
-    // backgroundPosition={'right 35% bottom 45%'}
+    imgPosition={''}
+    backgroundPosition={''}
   />
 );

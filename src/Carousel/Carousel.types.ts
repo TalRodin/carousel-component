@@ -9,6 +9,7 @@ type TabData = {
   imgHorizontalPoint?:string;
   imgVerticalPoint?:string;
   htmlContent?:string;
+
 }
 
 export interface CarouselComponentProps {
@@ -30,4 +31,6 @@ export interface CarouselComponentProps {
   backgroundPosition?:string;
   dotRadius?:number;
   contentDirection?: string;
+  tearFile?:string;
+  splitImageAlignment?:string;
 }
