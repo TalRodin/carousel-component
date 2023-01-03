@@ -124,8 +124,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     { 'is-aligned-bottom': props.splitImageAlignment === 'bottom' }
   );
 
-  useEffect(() => {}, []);
-
   return (
     <div style={styleCarousel} className='carousel-wrapper'>
       <div className={containerTear} ref={containerRef}>
