@@ -7,6 +7,20 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
   const [currentTab, setCurrentTab] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigationRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const focusableTabs = document.querySelectorAll('.text-content');
+  const [contentLoaded, setContentLoaded] = useState(false);
+  const allButtons = navigationRef.current?.querySelectorAll('.control-card');
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setContentLoaded(true);
+    };
+    window.addEventListener('load', handleWindowResize);
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
 
   const styleCarousel = {
     '--width': props.width + 'vw',
@@ -124,6 +138,33 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     { 'is-aligned-bottom': props.splitImageAlignment === 'bottom' }
   );
 
+  useEffect(() => {
+    let focusEl;
+    if (contentLoaded == true) {
+      focusEl = [
+        ...focusableTabs[currentTab].querySelectorAll(
+          'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+        ),
+      ].filter(
+        (el) => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
+      );
+    }
+    let prevButt;
+    navigationRef.current.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowUp') {
+        prevButt = currentTab;
+        if (focusEl && focusEl.length > 0) {
+          focusEl[0].focus();
+        }
+      }
+    });
+    focusableTabs[currentTab]?.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') {
+        allButtons[prevButt]?.focus();
+      }
+    });
+  }, [contentLoaded, currentTab, focusableTabs, allButtons]);
+
   return (
     <div style={styleCarousel} className='carousel-wrapper'>
       <div className={containerTear} ref={containerRef}>
@@ -151,7 +192,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                   <source src={tab.video} type='video/mp4' />
                 </video>
               )}
-              <div className='text'>
+              <div className='text' ref={contentRef}>
                 <div className={`text-content ${props.contentDirection}`}>
                   {tab.text && (
                     <div tabIndex={index === currentTab ? 0 : -1}>
@@ -176,6 +217,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
               ? `nav-card ${props.navigationPosition}`
               : 'empty-nav'
           }
+          ref={navigationRef}
         >
           {props.tabsData.length > 1 &&
             props.tabsData.map((tab, index) => (

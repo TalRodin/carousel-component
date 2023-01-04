@@ -24,7 +24,7 @@ const tabsData = [
     color: '#212121',
     video:
       'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    text: '',
   },
   {
     tabLabel: 'Random',
@@ -54,7 +54,7 @@ export const SmallCarousel = () => (
     height={60}
     borderRadius={10}
     navigationPosition={'bottom'}
-    dotSize={8}
+    dotSize={6}
     dotRadius={2}
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}
@@ -80,15 +80,19 @@ export const LargeCarousel = () => (
     borderRadius={16}
     navigationPosition={'right'}
     dotSize={4}
+    dotRadius={25}
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}
     dotColorActive={'#fff'}
-    dotMargin={'1 1 1 1'}
+    dotMargin={'1 2'}
     dotMarginMobile={4}
     tabsData={tabsData}
-    textPosition={'left-center'}
-    textWidth={24}
+    textPosition={'center'}
+    textWidth={40}
     textContentPadding={24}
+    contentDirection={'column'}
+    tearFile={vectorImg}
+    splitImageAlignment={'left'}
     imgPosition={''}
     backgroundPosition={''}
   />
