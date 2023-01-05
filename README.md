@@ -55,6 +55,8 @@ Tabs Data accepts:
 - video
 - text
 - htmlContent
+- imgHorizontalPoint (if needed, accepts:'left','center','right')
+- imgVerticalPoint (if needed, accepts:'top','center','bottom')
 
 Example:
 
@@ -88,6 +90,8 @@ Example:
 | **contentDirection**    |             | 'row', 'column'                                                                                                                                | _Direction of content if dataTabs contains text and html content._                                                                                                                                                    |
 | **splitImageAlignment** |             | 'top', 'bottom', 'left', 'right'                                                                                                               | _Mask image alignment._                                                                                                                                                                                               |
 | **tearFile**            |             | string                                                                                                                                         | _Import image .png as `import nameYourImage from path/imageFile.png` in your component and insert into `<CarouselComponent tearFile={nameYourImage}/>`. Example of image please take in the src/Carousel/images file_ |
+| **backgroundPosition**  |             | string                                                                                                                                         | _Background(image) position. Ex.:`top 20px right 30px`. First value is top/bottom, second value right/left and `px` number._                                                                                          |
+| **arrowNavigation**     |             | boolean                                                                                                                                        | _Show arrow navigation_                                                                                                                                                                                               |
 
 ### Author
 

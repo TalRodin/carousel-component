@@ -2,6 +2,8 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import { CarouselComponentProps } from './Carousel.types';
 import './Carousel.css';
+import BackIcon from './svg/backIcon';
+import ForwardIcon from './svg/forwardIcon';
 
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
@@ -39,10 +41,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--dotMarginMobile': props.dotMarginMobile + 'vw',
     '--textWidth': props.textWidth + 'vw',
     '--text-content-padding': props.textContentPadding + 'px',
-    '--img-position-vertical':
-      props.imgPosition && props.imgPosition.split(' ')[1] + 'px',
-    '--img-position-horizontal':
-      props.imgPosition && props.imgPosition.split(' ')[0] + 'px',
     '--background-position': props.backgroundPosition,
     '--dotRadius': props.dotRadius + 'px',
     '--content-direction': props.contentDirection,
@@ -165,9 +163,46 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     });
   }, [contentLoaded, currentTab, focusableTabs, allButtons]);
 
+  const toggleArrowLeftButton = useCallback(
+    (e) => {
+      if (currentTab >= 1) {
+        setCurrentTab(currentTab - 1);
+        setPreviousTab(currentTab);
+      }
+    },
+    [currentTab]
+  );
+  const toggleArrowRightButton = useCallback(
+    (e) => {
+      if (currentTab < props.tabsData.length - 1) {
+        setCurrentTab(currentTab + 1);
+        setPreviousTab(currentTab);
+      }
+    },
+    [currentTab]
+  );
+
   return (
     <div style={styleCarousel} className='carousel-wrapper'>
       <div className={containerTear} ref={containerRef}>
+        {props.arrowNavigation && (
+          <>
+            {' '}
+            <button
+              className='arrow-button left'
+              onClick={toggleArrowLeftButton}
+            >
+              <BackIcon />
+            </button>
+            <button
+              className='arrow-button right'
+              onClick={toggleArrowRightButton}
+            >
+              <ForwardIcon />
+            </button>
+          </>
+        )}
+
         <div className='slides-card'>
           {props.tabsData.map((tab, index) => (
             <div

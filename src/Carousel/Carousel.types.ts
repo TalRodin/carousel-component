@@ -27,10 +27,10 @@ export interface CarouselComponentProps {
   textWidth?: number;
   dotMarginMobile?: number;
   textContentPadding?: number;
-  imgPosition?:string;
   backgroundPosition?:string;
   dotRadius?:number;
   contentDirection?: string;
   tearFile?:string;
   splitImageAlignment?:string;
+  arrowNavigation:Boolean;
 }
