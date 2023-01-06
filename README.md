@@ -49,14 +49,15 @@ const tabsData = [
 
 Tabs Data accepts:
 
-- tabLabel
-- color
-- image
-- video
-- text
-- htmlContent
-- imgHorizontalPoint (if needed, accepts:'left','center','right')
-- imgVerticalPoint (if needed, accepts:'top','center','bottom')
+| **tabLabel**| string |
+| **color**| string |
+| **image**| string |
+| **video**| string |
+| **text**| string |
+| **htmlContent**| string |
+| **imgHorizontalPoint**| string: 'left','center','right' |
+| **imgVerticalPoint**| string: 'top','center','bottom' |
+| **component**| Ex.: component: nameOfComponent |
 
 Example:
 
