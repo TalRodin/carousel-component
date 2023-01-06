@@ -192,12 +192,14 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
             <button
               className='arrow-button left'
               onClick={toggleArrowLeftButton}
+              tabIndex={1}
             >
               <BackIcon />
             </button>
             <button
               className='arrow-button right'
               onClick={toggleArrowRightButton}
+              tabIndex={1}
             >
               <ForwardIcon />
             </button>
@@ -207,7 +209,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
         <div className='slides-card'>
           {props.tabsData.map((tab, index) => (
             <div
-              aria-hidden={currentTab !== index}
               key={`image-${index}`}
               className={`${imageStyles[index]} ${props.textPosition} 
          
@@ -228,7 +229,12 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                   <source src={tab.video} type='video/mp4' />
                 </video>
               )}
-              <div className='text' ref={contentRef}>
+              <div
+                className='text'
+                ref={contentRef}
+                hidden={currentTab !== index}
+                aria-hidden={currentTab !== index}
+              >
                 <div className={`text-content ${props.contentDirection}`}>
                   {tab.text && (
                     <div tabIndex={index === currentTab ? 0 : -1}>

@@ -284,13 +284,14 @@
   z-index: 999;
   background: none;
   border:none;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .arrow-button.left{
-  align-items: center;
-  height:100%;
+  align-items: center;  
 }
 .arrow-button.right{
   align-items: center;
   right:0;
-  height:100%;
+
 }

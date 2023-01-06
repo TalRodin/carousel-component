@@ -56,6 +56,7 @@ const tabsData = [
     imgVerticalPoint: 'top',
   },
 ];
+
 export const SmallCarousel = () => (
   <CarouselComponent
     width={50}
