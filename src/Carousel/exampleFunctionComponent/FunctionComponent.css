@@ -1,0 +1,17 @@
+.function-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 4fr);
+    grid-auto-rows: 120px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.card{
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 13px );
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

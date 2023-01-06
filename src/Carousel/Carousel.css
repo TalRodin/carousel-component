@@ -144,6 +144,8 @@
 .text {
   position: absolute;
   width: var(--textWidth);
+  height: var(--textHeight);
+  overflow-y: scroll;
 }
 .text-content {
   padding: var(--text-content-padding);

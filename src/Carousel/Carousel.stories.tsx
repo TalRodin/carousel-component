@@ -4,6 +4,7 @@ import vectorImg from './images/vector.png';
 import vectorImgRight from './images/vector-right.png';
 import vectorImgTop from './images/vector-top.png';
 import vectorImgBottom from './images/vector-bottom.png';
+import FunctionComponent from './exampleFunctionComponent/FunctionComponent';
 
 export default {
   title: 'CarouselComponent',
@@ -18,8 +19,8 @@ const tabsData = [
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.',
     htmlContent:
       '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p></div>',
-    // imgHorizontalPoint: 'right',
-    // imgVerticalPoint: 'bottom',
+    imgHorizontalPoint: 'right',
+    imgVerticalPoint: 'bottom',
   },
   {
     tabLabel: 'Project',
@@ -33,7 +34,10 @@ const tabsData = [
     color: '#fff',
     image:
       'https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    component: FunctionComponent,
+    text: 'Lorem ipsum dolor sit ametMaecenas pretium molestie dui ac consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.',
+    htmlContent:
+      '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p></div>',
   },
   {
     tabLabel: 'Random',
@@ -68,6 +72,7 @@ export const SmallCarousel = () => (
     tabsData={tabsData}
     textPosition={'left-center'}
     textWidth={42}
+    textHeight={42}
     textContentPadding={36}
     contentDirection={'column'}
     // tearFile={vectorImg}
@@ -93,6 +98,7 @@ export const LargeCarousel = () => (
     tabsData={tabsData}
     textPosition={'center'}
     textWidth={40}
+    textHeight={80}
     textContentPadding={24}
     contentDirection={'column'}
     tearFile={vectorImg}

@@ -25,6 +25,7 @@ export interface CarouselComponentProps {
   dotMargin?: string;
   textPosition?: string;
   textWidth?: number;
+  textHeight?:number;
   dotMarginMobile?: number;
   textContentPadding?: number;
   backgroundPosition?:string;

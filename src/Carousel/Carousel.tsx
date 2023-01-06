@@ -40,6 +40,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
       .join(' '),
     '--dotMarginMobile': props.dotMarginMobile + 'vw',
     '--textWidth': props.textWidth + 'vw',
+    '--textHeight': props.textHeight + 'vh',
     '--text-content-padding': props.textContentPadding + 'px',
     '--background-position': props.backgroundPosition,
     '--dotRadius': props.dotRadius + 'px',
@@ -241,6 +242,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                       dangerouslySetInnerHTML={{ __html: tab.htmlContent }}
                     ></div>
                   )}
+                  {tab.component && <tab.component />}
                 </div>
               </div>
             </div>
