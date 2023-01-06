@@ -140,28 +140,35 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   useEffect(() => {
     let focusEl;
     if (contentLoaded == true) {
-      focusEl = [
-        ...focusableTabs[currentTab].querySelectorAll(
+      focusEl = Array.from(
+        focusableTabs[currentTab]?.querySelectorAll(
           'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-        ),
-      ].filter(
+        )
+      ).filter(
         (el) => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
       );
     }
+    console.log(typeof focusEl);
     let prevButt;
-    navigationRef.current.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowUp') {
-        prevButt = currentTab;
-        if (focusEl && focusEl.length > 0) {
-          focusEl[0].focus();
+    navigationRef.current.addEventListener(
+      'keydown',
+      function (e: KeyboardEvent) {
+        if (e.key === 'ArrowUp') {
+          prevButt = currentTab;
+          if (focusEl && focusEl.length > 0) {
+            (focusEl[0] as HTMLElement)?.focus();
+          }
         }
       }
-    });
-    focusableTabs[currentTab]?.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowDown') {
-        allButtons[prevButt]?.focus();
+    );
+    focusableTabs[currentTab]?.addEventListener(
+      'keydown',
+      function (e: KeyboardEvent) {
+        if (e.key === 'ArrowDown') {
+          (allButtons[prevButt] as HTMLElement)?.focus();
+        }
       }
-    });
+    );
   }, [contentLoaded, currentTab, focusableTabs, allButtons]);
 
   const toggleArrowLeftButton = useCallback(

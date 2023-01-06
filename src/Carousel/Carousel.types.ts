@@ -9,7 +9,7 @@ type TabData = {
   imgHorizontalPoint?:string;
   imgVerticalPoint?:string;
   htmlContent?:string;
-
+  component?: any;
 }
 
 export interface CarouselComponentProps {
