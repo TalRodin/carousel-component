@@ -34,4 +34,8 @@ export interface CarouselComponentProps {
   tearFile?:string;
   splitImageAlignment?:string;
   arrowNavigation:Boolean;
+  mobileTextWidth?:number;
+  mobileTextHeight?:number;
+  mobileContentDirection?:string;
+  textContentDisplay?: string;
 }

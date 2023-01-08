@@ -41,10 +41,13 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--dotMarginMobile': props.dotMarginMobile + 'vw',
     '--textWidth': props.textWidth + 'vw',
     '--textHeight': props.textHeight + 'vh',
+    '--mobileTextWidth': props.mobileTextWidth + 'vw',
+    '--mobileTextHeight': props.mobileTextHeight + 'vh',
     '--text-content-padding': props.textContentPadding + 'px',
     '--background-position': props.backgroundPosition,
     '--dotRadius': props.dotRadius + 'px',
     '--content-direction': props.contentDirection,
+    '--mobile-content-direction': props.mobileContentDirection,
   };
 
   const toggleTab = useCallback(
@@ -148,7 +151,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
         (el) => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
       );
     }
-    console.log(typeof focusEl);
     let prevButt;
     navigationRef.current.addEventListener(
       'keydown',
@@ -242,7 +244,9 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                 hidden={currentTab !== index}
                 aria-hidden={currentTab !== index}
               >
-                <div className={`text-content ${props.contentDirection}`}>
+                <div
+                  className={`text-content ${props.contentDirection} ${props.textContentDisplay}`}
+                >
                   {tab.text && (
                     <div tabIndex={index === currentTab ? 0 : -1}>
                       {tab.text}
@@ -251,12 +255,15 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                   {tab.htmlContent && (
                     <div
                       tabIndex={index === currentTab ? 0 : -1}
-                      className={`html-content ${props.contentDirection}`}
+                      className={`html-content ${
+                        props.textContentDisplay === 'flex' &&
+                        props.contentDirection
+                      }`}
                       dangerouslySetInnerHTML={{ __html: tab.htmlContent }}
                     ></div>
                   )}
-                  {tab.component && <tab.component />}
                 </div>
+                {tab.component && <tab.component />}
               </div>
             </div>
           ))}

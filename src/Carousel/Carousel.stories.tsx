@@ -72,14 +72,18 @@ export const SmallCarousel = () => (
     dotMarginMobile={4}
     tabsData={tabsData}
     textPosition={'left-center'}
-    textWidth={42}
+    textWidth={50}
+    mobileTextWidth={102}
     textHeight={42}
+    mobileTextHeight={42}
     textContentPadding={36}
     contentDirection={'column'}
-    // tearFile={vectorImg}
-    // splitImageAlignment={'left'}
+    mobileContentDirection={'column'}
+    tearFile={vectorImgTop}
+    splitImageAlignment={'top'}
     // backgroundPosition={'top 0px left 240px'}
     arrowNavigation={true}
+    textContentDisplay={'flex'}
   />
 );
 
