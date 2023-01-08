@@ -77,13 +77,17 @@ export const SmallCarousel = () => (
     textHeight={42}
     mobileTextHeight={42}
     textContentPadding={36}
-    contentDirection={'column'}
+    contentDirection={'row'}
     mobileContentDirection={'column'}
-    tearFile={vectorImgTop}
+    // tearFile={vectorImgTop}
     splitImageAlignment={'top'}
-    // backgroundPosition={'top 0px left 240px'}
+    backgroundPosition={'top 0px left 0px'}
     arrowNavigation={true}
     textContentDisplay={'flex'}
+    gridGap={10}
+    numberGridColumns={2}
+    mobileNumberGridColumns={1}
+    textContentWidth={60}
   />
 );
 

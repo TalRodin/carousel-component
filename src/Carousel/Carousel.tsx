@@ -48,6 +48,10 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--dotRadius': props.dotRadius + 'px',
     '--content-direction': props.contentDirection,
     '--mobile-content-direction': props.mobileContentDirection,
+    '--grid-gap': props.gridGap + 'px',
+    '--number-grid-columns': props.numberGridColumns,
+    '--text-content-width': props.textContentWidth + 'vw',
+    '--mobile-number-grid-columns': props.mobileNumberGridColumns,
   };
 
   const toggleTab = useCallback(
@@ -248,7 +252,13 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                   className={`text-content ${props.contentDirection} ${props.textContentDisplay}`}
                 >
                   {tab.text && (
-                    <div tabIndex={index === currentTab ? 0 : -1}>
+                    <div
+                      className={`txt-content ${
+                        props.textContentDisplay === 'flex' &&
+                        props.contentDirection
+                      }`}
+                      tabIndex={index === currentTab ? 0 : -1}
+                    >
                       {tab.text}
                     </div>
                   )}
