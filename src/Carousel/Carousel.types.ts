@@ -38,7 +38,7 @@ export interface CarouselComponentProps {
   mobileTextHeight?:number;
   mobileContentDirection?:string;
   textContentDisplay?: string;
-  gridGap?: string;
+  gridGap?: number;
   textContentWidth?:number;
   numberGridColumns?:number;
   mobileNumberGridColumns?: number;
