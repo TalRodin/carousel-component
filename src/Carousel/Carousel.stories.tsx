@@ -81,7 +81,7 @@ export const SmallCarousel = () => (
     mobileContentDirection={'column'}
     // tearFile={vectorImgTop}
     splitImageAlignment={'top'}
-    backgroundPosition={'top 0px left 0px'}
+    backgroundPosition={'top 0px left 0px '}
     arrowNavigation={true}
     textContentDisplay={'flex'}
     gridGap={10}

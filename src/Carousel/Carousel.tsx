@@ -14,10 +14,16 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const focusableTabs = document.querySelectorAll('.text-content');
   const [contentLoaded, setContentLoaded] = useState(false);
   const allButtons = navigationRef.current?.querySelectorAll('.control-card');
+  const [typeWindow, setTypeWindow] = useState('');
 
   useEffect(() => {
     const handleWindowResize = () => {
       setContentLoaded(true);
+      if (window.innerWidth <= 750) {
+        setTypeWindow('mobile');
+      } else {
+        setTypeWindow('desk');
+      }
     };
     window.addEventListener('load', handleWindowResize);
     window.addEventListener('resize', handleWindowResize);
@@ -38,20 +44,20 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
         return v + 'vw';
       })
       .join(' '),
-    '--dotMarginMobile': props.dotMarginMobile + 'vw',
     '--textWidth': props.textWidth + 'vw',
     '--textHeight': props.textHeight + 'vh',
-    '--mobileTextWidth': props.mobileTextWidth + 'vw',
-    '--mobileTextHeight': props.mobileTextHeight + 'vh',
     '--text-content-padding': props.textContentPadding + 'px',
     '--background-position': props.backgroundPosition,
     '--dotRadius': props.dotRadius + 'px',
     '--content-direction': props.contentDirection,
-    '--mobile-content-direction': props.mobileContentDirection,
     '--grid-gap': props.gridGap + 'px',
     '--number-grid-columns': props.numberGridColumns,
     '--text-content-width': props.textContentWidth + 'vw',
+    '--mobileTextWidth': props.mobileTextWidth + 'vw',
+    '--mobileTextHeight': props.mobileTextHeight + 'vh',
+    '--mobile-content-direction': props.mobileContentDirection,
     '--mobile-number-grid-columns': props.mobileNumberGridColumns,
+    '--dotMarginMobile': props.dotMarginMobile + 'vw',
   };
 
   const toggleTab = useCallback(
@@ -249,13 +255,19 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                 aria-hidden={currentTab !== index}
               >
                 <div
-                  className={`text-content ${props.contentDirection} ${props.textContentDisplay}`}
+                  className={`text-content ${
+                    typeWindow === 'desk'
+                      ? props.contentDirection
+                      : props.mobileContentDirection
+                  } ${props.textContentDisplay}`}
                 >
                   {tab.text && (
                     <div
                       className={`txt-content ${
                         props.textContentDisplay === 'flex' &&
-                        props.contentDirection
+                        typeWindow === 'desk'
+                          ? props.contentDirection
+                          : props.mobileContentDirection
                       }`}
                       tabIndex={index === currentTab ? 0 : -1}
                     >
@@ -267,7 +279,9 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                       tabIndex={index === currentTab ? 0 : -1}
                       className={`html-content ${
                         props.textContentDisplay === 'flex' &&
-                        props.contentDirection
+                        typeWindow === 'desk'
+                          ? props.contentDirection
+                          : props.mobileContentDirection
                       }`}
                       dangerouslySetInnerHTML={{ __html: tab.htmlContent }}
                     ></div>

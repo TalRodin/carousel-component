@@ -320,4 +320,17 @@
   .text-content.flex{
     flex-direction: var(--mobile-content-direction);
   }
+
+  .txt-content.row{
+    margin:0vw 1vw 0vw 0vw ;
+  }
+  .txt-content.column{
+    margin:0vw  0vw 1vw 0vw ;
+  }
+  .html-content.row{
+    margin:0vw 0vw 0vw 1vw;
+  }
+  .html-content.column{
+    margin:1vw 0vw 0vw 0vw ;
+  }
 }
