@@ -19,7 +19,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   useEffect(() => {
     const handleWindowResize = () => {
       setContentLoaded(true);
-      if (window.innerWidth <= 750) {
+      if (window.innerWidth <= 600) {
         setTypeWindow('mobile');
       } else {
         setTypeWindow('desk');
@@ -32,7 +32,9 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
 
   const styleCarousel = {
     '--width': props.width + 'vw',
-    height: props.height + 'vh',
+    '--height': props.height + 'vh',
+    '--mobile-width': props.mobileWidth + 'vw',
+    '--mobile-height': props.mobileHeight + 'vh',
     '--borderRadius': props.borderRadius + 'px',
     '--dotSize': props.dotSize + 'px',
     '--dotColor': props.dotColor,

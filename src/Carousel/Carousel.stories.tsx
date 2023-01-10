@@ -61,6 +61,7 @@ export const SmallCarousel = () => (
   <CarouselComponent
     width={50}
     height={60}
+    mobileHeight={40}
     borderRadius={12}
     navigationPosition={'bottom'}
     dotSize={3}

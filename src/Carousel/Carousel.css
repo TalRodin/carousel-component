@@ -1,5 +1,6 @@
 .carousel-wrapper{
   width:var(--width);
+  height:var(--height);
 }
 
 .image-card{
@@ -272,6 +273,10 @@
   
   .bg-mobile-vertical-bottom {
     background-position-y: bottom;
+  }
+  .carousel-wrapper{
+    width:var(--mobile-width);
+    height:var(--mobile-height);
   }
 }
 

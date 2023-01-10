@@ -15,6 +15,8 @@ type TabData = {
 export interface CarouselComponentProps {
   width: number;
   height: number;
+  mobileWidth?:number;
+  mobileHeight?:number;
   tabsData: Array<TabData>;
   navigationPosition: string;
   borderRadius?: number; 
