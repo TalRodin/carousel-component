@@ -9,6 +9,8 @@
        position:relative;
        scroll-behavior: smooth;
        border-radius: var(--borderRadius);
+       -webkit-border-radius: var(--borderRadius);
+       -moz-border-radius: var(--borderRadius);
        overflow: hidden;   
 }
 
@@ -312,6 +314,8 @@
   }
   .image-card{
     border-radius: var(--mobileBorderRadius);
+    -webkit-border-radius: var(--mobileBorderRadius);
+    -moz-border-radius: var(--mobileBorderRadius);
   }
   .control-card{
       margin:var(--dotMarginMobile)
