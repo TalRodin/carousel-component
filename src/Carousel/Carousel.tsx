@@ -5,7 +5,9 @@ import './Carousel.css';
 import BackIcon from './svg/backIcon';
 import ForwardIcon from './svg/forwardIcon';
 
-const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
+const CarouselComponent: React.FunctionComponent<CarouselComponentProps> = (
+  props: CarouselComponentProps
+) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
   const [currentTab, setCurrentTab] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,37 +33,37 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   }, []);
 
   const styleCarousel = {
-    '--width': props.width + 'vw',
-    '--height': props.height + 'vh',
-    '--mobile-width': props.mobileWidth + 'vw',
-    '--mobile-height': props.mobileHeight + 'vh',
-    '--borderRadius': props.borderRadius + 'px',
-    '--mobileBorderRadius': props.mobileBorderRadius + 'px',
-    '--dotSize': props.dotSize + 'px',
-    '--mobileDotSize': props.mobileDotSize + 'px',
-    '--dotColor': props.dotColor,
-    '--dotColorHover': props.dotColorHover,
-    '--dotColorActive': props.dotColorActive,
-    '--dotMargin': props.dotMargin
+    ['--width' as string]: props.width + 'vw',
+    ['--height' as string]: props.height + 'vh',
+    ['--mobile-width' as string]: props.mobileWidth + 'vw',
+    ['--mobile-height' as string]: props.mobileHeight + 'vh',
+    ['--borderRadius' as string]: props.borderRadius + 'px',
+    ['--mobileBorderRadius' as string]: props.mobileBorderRadius + 'px',
+    ['--dotSize' as string]: props.dotSize + 'px',
+    ['--mobileDotSize' as string]: props.mobileDotSize + 'px',
+    ['--dotColor' as string]: props.dotColor,
+    ['--dotColorHover' as string]: props.dotColorHover,
+    ['--dotColorActive' as string]: props.dotColorActive,
+    ['--dotMargin' as string]: props.dotMargin
       .split(' ')
       .map((v: string) => {
         return v + 'vw';
       })
       .join(' '),
-    '--textWidth': props.textWidth + 'vw',
-    '--textHeight': props.textHeight + 'vh',
-    '--text-content-padding': props.textContentPadding + 'px',
-    '--background-position': props.backgroundPosition,
-    '--dotRadius': props.dotRadius + 'px',
-    '--content-direction': props.contentDirection,
-    '--grid-gap': props.gridGap + 'px',
-    '--number-grid-columns': props.numberGridColumns,
-    '--text-content-width': props.textContentWidth + 'vw',
-    '--mobileTextWidth': props.mobileTextWidth + 'vw',
-    '--mobileTextHeight': props.mobileTextHeight + 'vh',
-    '--mobile-content-direction': props.mobileContentDirection,
-    '--mobile-number-grid-columns': props.mobileNumberGridColumns,
-    '--dotMarginMobile': props.dotMarginMobile
+    ['--textWidth' as string]: props.textWidth + 'vw',
+    ['--textHeight' as string]: props.textHeight + 'vh',
+    ['--text-content-padding' as string]: props.textContentPadding + 'px',
+    ['--background-position' as string]: props.backgroundPosition,
+    ['--dotRadius' as string]: props.dotRadius + 'px',
+    ['--content-direction' as string]: props.contentDirection,
+    ['--grid-gap' as string]: props.gridGap + 'px',
+    ['--number-grid-columns' as string]: props.numberGridColumns,
+    ['--text-content-width' as string]: props.textContentWidth + 'vw',
+    ['--mobileTextWidth' as string]: props.mobileTextWidth + 'vw',
+    ['--mobileTextHeight' as string]: props.mobileTextHeight + 'vh',
+    ['--mobile-content-direction' as string]: props.mobileContentDirection,
+    ['--mobile-number-grid-columns' as string]: props.mobileNumberGridColumns,
+    ['--dotMarginMobile' as string]: props.dotMarginMobile
       .split(' ')
       .map((v: string) => {
         return v + 'vw';
