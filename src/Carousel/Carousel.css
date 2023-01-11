@@ -309,6 +309,9 @@
   .carousel-wrapper{
       width:100vw;
   }
+  .image-card{
+    border-radius: var(--mobileBorderRadius);
+  }
   .control-card{
       margin:var(--dotMarginMobile)
   }

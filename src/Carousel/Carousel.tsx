@@ -36,6 +36,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--mobile-width': props.mobileWidth + 'vw',
     '--mobile-height': props.mobileHeight + 'vh',
     '--borderRadius': props.borderRadius + 'px',
+    '--mobileBorderRadius': props.mobileBorderRadius + 'px',
     '--dotSize': props.dotSize + 'px',
     '--dotColor': props.dotColor,
     '--dotColorHover': props.dotColorHover,
@@ -153,37 +154,40 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   );
 
   useEffect(() => {
-    let focusEl;
-    if (contentLoaded == true) {
-      focusEl = Array.from(
-        focusableTabs[currentTab]?.querySelectorAll(
-          'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-        )
-      ).filter(
-        (el) => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
-      );
-    }
-    let prevButt;
-    navigationRef.current.addEventListener(
-      'keydown',
-      function (e: KeyboardEvent) {
-        if (e.key === 'ArrowUp') {
-          prevButt = currentTab;
-          if (focusEl && focusEl.length > 0) {
-            (focusEl[0] as HTMLElement)?.focus();
+    if (props.navigation) {
+      let focusEl;
+      if (contentLoaded == true) {
+        focusEl = Array.from(
+          focusableTabs[currentTab]?.querySelectorAll(
+            'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter(
+          (el) =>
+            !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
+        );
+      }
+      let prevButt;
+      navigationRef.current.addEventListener(
+        'keydown',
+        function (e: KeyboardEvent) {
+          if (e.key === 'ArrowUp') {
+            prevButt = currentTab;
+            if (focusEl && focusEl.length > 0) {
+              (focusEl[0] as HTMLElement)?.focus();
+            }
           }
         }
-      }
-    );
-    focusableTabs[currentTab]?.addEventListener(
-      'keydown',
-      function (e: KeyboardEvent) {
-        if (e.key === 'ArrowDown') {
-          (allButtons[prevButt] as HTMLElement)?.focus();
+      );
+      focusableTabs[currentTab]?.addEventListener(
+        'keydown',
+        function (e: KeyboardEvent) {
+          if (e.key === 'ArrowDown') {
+            (allButtons[prevButt] as HTMLElement)?.focus();
+          }
         }
-      }
-    );
-  }, [contentLoaded, currentTab, focusableTabs, allButtons]);
+      );
+    }
+  }, [contentLoaded, currentTab, focusableTabs, allButtons, props.navigation]);
 
   const toggleArrowLeftButton = useCallback(
     (e) => {
@@ -294,31 +298,33 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
             </div>
           ))}
         </div>
-        <div
-          className={
-            props.tabsData.length > 1
-              ? `nav-card ${props.navigationPosition}`
-              : 'empty-nav'
-          }
-          ref={navigationRef}
-        >
-          {props.tabsData.length > 1 &&
-            props.tabsData.map((tab, index) => (
-              <button
-                aria-selected={index === currentTab}
-                aria-controls={`tab-panel-${index}`}
-                data-index={index}
-                id={`tab-${index}`}
-                key={`button-${index}`}
-                onClick={toggleTab}
-                role='tab'
-                type='button'
-                className={`control-card ${
-                  index === currentTab ? 'is-active' : ''
-                }`}
-              ></button>
-            ))}
-        </div>
+        {props.navigation && (
+          <div
+            className={
+              props.tabsData.length > 1
+                ? `nav-card ${props.navigationPosition}`
+                : 'empty-nav'
+            }
+            ref={navigationRef}
+          >
+            {props.tabsData.length > 1 &&
+              props.tabsData.map((tab, index) => (
+                <button
+                  aria-selected={index === currentTab}
+                  aria-controls={`tab-panel-${index}`}
+                  data-index={index}
+                  id={`tab-${index}`}
+                  key={`button-${index}`}
+                  onClick={toggleTab}
+                  role='tab'
+                  type='button'
+                  className={`control-card ${
+                    index === currentTab ? 'is-active' : ''
+                  }`}
+                ></button>
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );

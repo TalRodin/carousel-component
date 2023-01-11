@@ -18,8 +18,9 @@ export interface CarouselComponentProps {
   mobileWidth?:number;
   mobileHeight?:number;
   tabsData: Array<TabData>;
-  navigationPosition: string;
+  navigationPosition?: string;
   borderRadius?: number; 
+  mobileBorderRadius?:number;
   dotSize?: number;
   dotColor?: string;
   dotColorHover?: string;
@@ -44,4 +45,5 @@ export interface CarouselComponentProps {
   textContentWidth?:number;
   numberGridColumns?:number;
   mobileNumberGridColumns?: number;
+  navigation?:boolean;
 }
