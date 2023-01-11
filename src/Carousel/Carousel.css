@@ -278,6 +278,7 @@
     width:var(--mobile-width);
     height:var(--mobile-height);
   }
+
 }
 
 .video-wrapper{
@@ -340,5 +341,8 @@
   }
   .html-content.column{
     margin:1vw 0vw 0vw 0vw ;
+  }
+  .control-card{
+    padding:var(--mobileDotSize);
   }
 }

@@ -67,12 +67,13 @@ export const SmallCarousel = () => (
     navigation={true}
     navigationPosition={'bottom'}
     dotSize={3}
+    mobileDotSize={2}
     dotRadius={50}
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}
     dotColorActive={'#fff'}
     dotMargin={'2 1'}
-    dotMarginMobile={4}
+    dotMarginMobile={'2 1'}
     tabsData={tabsData}
     textPosition={'left-center'}
     textWidth={50}

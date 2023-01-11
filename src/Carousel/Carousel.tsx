@@ -38,6 +38,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--borderRadius': props.borderRadius + 'px',
     '--mobileBorderRadius': props.mobileBorderRadius + 'px',
     '--dotSize': props.dotSize + 'px',
+    '--mobileDotSize': props.mobileDotSize + 'px',
     '--dotColor': props.dotColor,
     '--dotColorHover': props.dotColorHover,
     '--dotColorActive': props.dotColorActive,
@@ -60,7 +61,12 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     '--mobileTextHeight': props.mobileTextHeight + 'vh',
     '--mobile-content-direction': props.mobileContentDirection,
     '--mobile-number-grid-columns': props.mobileNumberGridColumns,
-    '--dotMarginMobile': props.dotMarginMobile + 'vw',
+    '--dotMarginMobile': props.dotMarginMobile
+      .split(' ')
+      .map((v: string) => {
+        return v + 'vw';
+      })
+      .join(' '),
   };
 
   const toggleTab = useCallback(

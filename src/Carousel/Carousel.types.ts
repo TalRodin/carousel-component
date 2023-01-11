@@ -22,6 +22,7 @@ export interface CarouselComponentProps {
   borderRadius?: number; 
   mobileBorderRadius?:number;
   dotSize?: number;
+  mobileDotSize?:number;
   dotColor?: string;
   dotColorHover?: string;
   dotColorActive?: string;
@@ -29,7 +30,7 @@ export interface CarouselComponentProps {
   textPosition?: string;
   textWidth?: number;
   textHeight?:number;
-  dotMarginMobile?: number;
+  dotMarginMobile?: string;
   textContentPadding?: number;
   backgroundPosition?:string;
   dotRadius?:number;
