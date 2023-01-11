@@ -5,9 +5,7 @@ import './Carousel.css';
 import BackIcon from './svg/backIcon';
 import ForwardIcon from './svg/forwardIcon';
 
-const CarouselComponent: React.FunctionComponent<CarouselComponentProps> = (
-  props: CarouselComponentProps
-) => {
+const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
   const [currentTab, setCurrentTab] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
