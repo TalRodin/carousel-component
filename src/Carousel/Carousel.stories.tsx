@@ -63,17 +63,17 @@ export const SmallCarousel = () => (
     height={60}
     mobileHeight={40}
     borderRadius={12}
-    mobileBorderRadius={0}
+    mobileBorderRadius={1}
     navigation={true}
     navigationPosition={'bottom'}
     dotSize={3}
-    mobileDotSize={2}
+    // mobileDotSize={2}
     dotRadius={50}
     dotColor={'#212121'}
     dotColorHover={'#eeeeee'}
     dotColorActive={'#fff'}
     dotMargin={'2 1'}
-    dotMarginMobile={'2 1'}
+    dotMarginMobile={'1 1'}
     tabsData={tabsData}
     textPosition={'left-center'}
     textWidth={50}
@@ -92,6 +92,8 @@ export const SmallCarousel = () => (
     numberGridColumns={2}
     mobileNumberGridColumns={1}
     // textContentWidth={60}
+    fontSize={14}
+    mobileFontSize={12}
   />
 );
 

@@ -46,4 +46,6 @@ export interface CarouselComponentProps {
   numberGridColumns?: number;
   mobileNumberGridColumns?: number;
   navigation?: boolean;
+  fontSize?: number;
+  mobileFontSize?:number;
 }

@@ -4,6 +4,7 @@ import { CarouselComponentProps } from './Carousel.types';
 import './Carousel.css';
 import BackIcon from './svg/backIcon';
 import ForwardIcon from './svg/forwardIcon';
+import { calculateMarginDotNavigation } from './helper/helper';
 
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
@@ -40,18 +41,18 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
       ? props.mobileHeight + 'vh'
       : props.height + 'vh',
     ['--borderRadius' as string]: props.borderRadius + 'px',
-    ['--mobileBorderRadius' as string]: props.mobileBorderRadius + 'px',
+    ['--mobileBorderRadius' as string]: props.mobileBorderRadius
+      ? props.mobileBorderRadius + 'px'
+      : props.borderRadius + 'px',
     ['--dotSize' as string]: props.dotSize + 'px',
-    ['--mobileDotSize' as string]: props.mobileDotSize + 'px',
+    ['--mobileDotSize' as string]: props.mobileDotSize
+      ? props.mobileDotSize + 'px'
+      : props.dotSize + 'px',
     ['--dotColor' as string]: props.dotColor,
     ['--dotColorHover' as string]: props.dotColorHover,
     ['--dotColorActive' as string]: props.dotColorActive,
-    ['--dotMargin' as string]: props.dotMargin
-      .split(' ')
-      .map((v: string) => {
-        return v + 'vw';
-      })
-      .join(' '),
+    ['--dotMargin' as string]:
+      props.dotMargin && calculateMarginDotNavigation(props.dotMargin),
     ['--textWidth' as string]: props.textWidth + 'vw',
     ['--textHeight' as string]: props.textHeight + 'vh',
     ['--text-content-padding' as string]: props.textContentPadding + 'px',
@@ -66,11 +67,12 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--mobile-content-direction' as string]: props.mobileContentDirection,
     ['--mobile-number-grid-columns' as string]: props.mobileNumberGridColumns,
     ['--dotMarginMobile' as string]: props.dotMarginMobile
-      .split(' ')
-      .map((v: string) => {
-        return v + 'vw';
-      })
-      .join(' '),
+      ? calculateMarginDotNavigation(props.dotMarginMobile)
+      : calculateMarginDotNavigation(props.dotMargin),
+    ['--font-size']: props.fontSize + 'px',
+    ['--mobile-font-size']: props.mobileFontSize
+      ? props.mobileFontSize + 'px'
+      : props.fontSize + 'px',
   };
 
   const toggleTab = useCallback(

@@ -1,3 +1,6 @@
+
+
+
 .carousel-wrapper{
   width:var(--width);
   height:var(--height);
@@ -152,6 +155,7 @@
 }
 .text-content {
   padding: var(--text-content-padding);
+  font-size: var(--font-size);
 }
 .text-content.flex{
   display: flex;
@@ -348,5 +352,8 @@
   }
   .control-card{
     padding:var(--mobileDotSize);
+  }
+  .text-content {
+    font-size: var(--mobile-font-size);
   }
 }
