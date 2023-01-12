@@ -69,8 +69,8 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--dotMarginMobile' as string]: props.dotMarginMobile
       ? calculateMarginDotNavigation(props.dotMarginMobile)
       : calculateMarginDotNavigation(props.dotMargin),
-    ['--font-size']: props.fontSize + 'px',
-    ['--mobile-font-size']: props.mobileFontSize
+    ['--font-size' as string]: props.fontSize + 'px',
+    ['--mobile-font-size' as string]: props.mobileFontSize
       ? props.mobileFontSize + 'px'
       : props.fontSize + 'px',
   };
