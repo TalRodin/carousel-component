@@ -33,8 +33,12 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const styleCarousel = {
     ['--width' as string]: props.width + 'vw',
     ['--height' as string]: props.height + 'vh',
-    ['--mobile-width' as string]: props.mobileWidth + 'vw',
-    ['--mobile-height' as string]: props.mobileHeight + 'vh',
+    ['--mobile-width' as string]: props.mobileWidth
+      ? props.mobileWidth + 'vw'
+      : props.width + 'vw',
+    ['--mobile-height' as string]: props.mobileHeight
+      ? props.mobileHeight + 'vh'
+      : props.height + 'vh',
     ['--borderRadius' as string]: props.borderRadius + 'px',
     ['--mobileBorderRadius' as string]: props.mobileBorderRadius + 'px',
     ['--dotSize' as string]: props.dotSize + 'px',
