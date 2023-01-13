@@ -48,4 +48,16 @@ export interface CarouselComponentProps {
   navigation?: boolean;
   fontSize?: number;
   mobileFontSize?:number;
+  dotBorder?: number;
+  dotBorderColor?:string;
+  navigationBorder?: boolean;
+  arrowButtonsBorder?:boolean;
+  contentBorder?:boolean
+  navigationBorderSize?:number;
+  navigationBorderColor?:string;
+  arrowButtonsSize?:number;
+  arrowButtonsColor?:string;
+  contentBordersSize?:number;
+  contentBordersColor?:string;
 }
+

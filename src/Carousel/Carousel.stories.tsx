@@ -62,6 +62,57 @@ export const SmallCarousel = () => (
     width={50}
     height={60}
     mobileHeight={40}
+    borderRadius={0}
+    mobileBorderRadius={1}
+    navigation={true}
+    navigationPosition={'bottom'}
+    dotSize={3}
+    mobileDotSize={2}
+    dotRadius={50}
+    dotColor={'#212121'}
+    dotColorHover={'#eeeeee'}
+    dotColorActive={'#fff'}
+    dotMargin={'2 1'}
+    dotMarginMobile={'4 1'}
+    tabsData={tabsData}
+    textPosition={'top-center'}
+    textWidth={49.5}
+    mobileTextWidth={99}
+    textHeight={46}
+    mobileTextHeight={30}
+    textContentPadding={36}
+    // contentDirection={'row'}
+    // mobileContentDirection={'column'}
+    // tearFile={vectorImgTop}
+    splitImageAlignment={'top'}
+    backgroundPosition={'top 0px left 0px '}
+    arrowNavigation={true}
+    textContentDisplay={'grid'}
+    gridGap={10}
+    numberGridColumns={2}
+    mobileNumberGridColumns={1}
+    // textContentWidth={60}
+    fontSize={14}
+    mobileFontSize={12}
+    dotBorder={2}
+    dotBorderColor={'#212121'}
+    navigationBorder={true}
+    navigationBorderSize={2}
+    navigationBorderColor={'#212121'}
+    arrowButtonsBorder={true}
+    arrowButtonsSize={2}
+    arrowButtonsColor={'#212121'}
+    contentBorder={true}
+    contentBordersSize={2}
+    contentBordersColor={'#212121'}
+  />
+);
+
+export const LargeCarousel = () => (
+  <CarouselComponent
+    width={90}
+    height={90}
+    mobileHeight={40}
     borderRadius={12}
     mobileBorderRadius={1}
     navigation={true}
@@ -83,7 +134,7 @@ export const SmallCarousel = () => (
     textContentPadding={36}
     // contentDirection={'row'}
     // mobileContentDirection={'column'}
-    // tearFile={vectorImgTop}
+    tearFile={vectorImgTop}
     splitImageAlignment={'top'}
     backgroundPosition={'top 0px left 0px '}
     arrowNavigation={true}
@@ -94,30 +145,5 @@ export const SmallCarousel = () => (
     // textContentWidth={60}
     fontSize={14}
     mobileFontSize={12}
-  />
-);
-
-export const LargeCarousel = () => (
-  <CarouselComponent
-    width={90}
-    height={90}
-    borderRadius={16}
-    navigationPosition={'right'}
-    dotSize={4}
-    dotRadius={25}
-    dotColor={'#212121'}
-    dotColorHover={'#eeeeee'}
-    dotColorActive={'#fff'}
-    dotMargin={'1 2'}
-    dotMarginMobile={4}
-    tabsData={tabsData}
-    textPosition={'center'}
-    textWidth={40}
-    textHeight={80}
-    textContentPadding={24}
-    contentDirection={'column'}
-    tearFile={vectorImg}
-    splitImageAlignment={'left'}
-    backgroundPosition={'right 35% bottom 45%'}
   />
 );

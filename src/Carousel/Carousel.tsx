@@ -18,6 +18,10 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [typeWindow, setTypeWindow] = useState('');
 
   useEffect(() => {
+    console.log(props.navigationBorderSize);
+  }, [props.navigationBorderSize]);
+
+  useEffect(() => {
     const handleWindowResize = () => {
       setContentLoaded(true);
       if (window.innerWidth <= 600) {
@@ -73,6 +77,14 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--mobile-font-size' as string]: props.mobileFontSize
       ? props.mobileFontSize + 'px'
       : props.fontSize + 'px',
+    ['--dot-border' as string]: props.dotBorder + 'px',
+    ['--dot-border-color' as string]: props.dotBorderColor,
+    ['--navigation-border-size' as string]: props.navigationBorderSize + 'px',
+    ['--navigation-border-color' as string]: props.navigationBorderColor,
+    ['--arrow-button-size' as string]: props.arrowButtonsSize + 'px',
+    ['--arrow-button-color' as string]: props.arrowButtonsColor,
+    ['--content-borders-size' as string]: props.contentBordersSize + 'px',
+    ['--content-borders-color' as string]: props.contentBordersColor,
   };
 
   const toggleTab = useCallback(
@@ -227,14 +239,18 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
           <>
             {' '}
             <button
-              className='arrow-button left'
+              className={`arrow-button left ${
+                props.arrowButtonsBorder && 'arrow-button-border'
+              }`}
               onClick={toggleArrowLeftButton}
               tabIndex={1}
             >
               <BackIcon />
             </button>
             <button
-              className='arrow-button right'
+              className={`arrow-button right ${
+                props.arrowButtonsBorder && 'arrow-button-border'
+              }`}
               onClick={toggleArrowRightButton}
               tabIndex={1}
             >
@@ -267,7 +283,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                 </video>
               )}
               <div
-                className='text'
+                className={`text ${props.contentBorder && 'content-border'}`}
                 ref={contentRef}
                 hidden={currentTab !== index}
                 aria-hidden={currentTab !== index}
@@ -314,7 +330,9 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
           <div
             className={
               props.tabsData.length > 1
-                ? `nav-card ${props.navigationPosition}`
+                ? `nav-card ${props.navigationPosition} ${
+                    props.navigationBorder && 'navigation-border'
+                  }`
                 : 'empty-nav'
             }
             ref={navigationRef}
