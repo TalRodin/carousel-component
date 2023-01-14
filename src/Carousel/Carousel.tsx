@@ -178,6 +178,40 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   );
 
   useEffect(() => {
+    if (typeWindow === 'mobile') {
+      let startX;
+      let deltaX;
+      const elementMove = (e: any) => {
+        let deltaX = e.touches[0].clientX - startX;
+
+        if (deltaX > 0) {
+          if (currentTab >= 1) {
+            setCurrentTab(currentTab - 1);
+            setPreviousTab(currentTab);
+          }
+        }
+        if (deltaX < 0) {
+          if (currentTab < props.tabsData.length - 1) {
+            setCurrentTab(currentTab + 1);
+            setPreviousTab(currentTab);
+          }
+        }
+      };
+
+      const closeTouch = (e: any) => {
+        deltaX = 0;
+        document.ontouchend = null;
+        document.ontouchmove = null;
+      };
+      document.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+        document.ontouchmove = elementMove;
+        document.ontouchend = closeTouch;
+      });
+    }
+  }, [typeWindow, currentTab]);
+
+  useEffect(() => {
     if (props.navigation) {
       let focusEl;
       if (contentLoaded == true) {
