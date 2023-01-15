@@ -4,7 +4,10 @@ import { CarouselComponentProps } from './Carousel.types';
 import './Carousel.css';
 import BackIcon from './svg/backIcon';
 import ForwardIcon from './svg/forwardIcon';
-import { calculateMarginDotNavigation } from './helper/helper';
+import {
+  calculateMarginDotNavigation,
+  calculatePaddingNavigation,
+} from './helper/helper';
 
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>(0);
@@ -16,10 +19,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [contentLoaded, setContentLoaded] = useState(false);
   const allButtons = navigationRef.current?.querySelectorAll('.control-card');
   const [typeWindow, setTypeWindow] = useState('');
-
-  useEffect(() => {
-    console.log(props.navigationBorderSize);
-  }, [props.navigationBorderSize]);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -81,10 +80,16 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--dot-border-color' as string]: props.dotBorderColor,
     ['--navigation-border-size' as string]: props.navigationBorderSize + 'px',
     ['--navigation-border-color' as string]: props.navigationBorderColor,
-    ['--arrow-button-size' as string]: props.arrowButtonsSize + 'px',
+    ['--arrow-button-border-size' as string]:
+      props.arrowButtonsBorderSize + 'px',
     ['--arrow-button-color' as string]: props.arrowButtonsColor,
     ['--content-borders-size' as string]: props.contentBordersSize + 'px',
     ['--content-borders-color' as string]: props.contentBordersColor,
+    ['--arrow-button-border-radius' as string]:
+      props.arrowButtonBorderRadius + 'px',
+    ['--arrow-button-size' as string]:
+      props.arrowButtonSize &&
+      calculatePaddingNavigation(props.arrowButtonSize),
   };
 
   const toggleTab = useCallback(

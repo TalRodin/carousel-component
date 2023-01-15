@@ -5,3 +5,10 @@ export const calculateMarginDotNavigation=(v:string)=>{
     })
     .join(' ')
 }
+export const calculatePaddingNavigation=(v:string)=>{
+    return v.split(' ')
+    .map((v: string) => {
+      return v + 'px';
+    })
+    .join(' ')
+}

@@ -55,9 +55,12 @@ export interface CarouselComponentProps {
   contentBorder?:boolean
   navigationBorderSize?:number;
   navigationBorderColor?:string;
-  arrowButtonsSize?:number;
+  arrowButtonsBorderSize?:number;
   arrowButtonsColor?:string;
   contentBordersSize?:number;
   contentBordersColor?:string;
+  arrowButtonBorderRadius?:number;
+  arrowButtonSize?:string;
 }
+
 

@@ -100,11 +100,13 @@ export const SmallCarousel = () => (
     navigationBorderSize={2}
     navigationBorderColor={'#212121'}
     arrowButtonsBorder={true}
-    arrowButtonsSize={2}
+    arrowButtonsBorderSize={2}
     arrowButtonsColor={'#212121'}
-    contentBorder={true}
-    contentBordersSize={2}
-    contentBordersColor={'#212121'}
+    // contentBorder={true}
+    // contentBordersSize={2}
+    // contentBordersColor={'#212121'}
+    arrowButtonBorderRadius={25}
+    arrowButtonSize={'0 4'}
   />
 );
 

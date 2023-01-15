@@ -331,10 +331,12 @@
   border:none;
   top: 50%;
   transform: translateY(-50%);
+  padding:var(--arrow-button-size)
 }
 
 .arrow-button.arrow-button-border{
-  border:var(--arrow-button-size) solid var(--arrow-button-color) ;
+  border:var(--arrow-button-border-size) solid var(--arrow-button-color) ;
+  border-radius: var(--arrow-button-border-radius);
 }
 .arrow-button.left{
   align-items: center;  
