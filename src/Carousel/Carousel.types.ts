@@ -61,6 +61,9 @@ export interface CarouselComponentProps {
   contentBordersColor?:string;
   arrowButtonBorderRadius?:number;
   arrowButtonSize?:string;
+  arrowButtonMargin?:string;
+  arrowButtonBackgroundColor?:string;
+  arrowColor?:string;
 }
 
 

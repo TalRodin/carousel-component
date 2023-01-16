@@ -331,7 +331,14 @@
   border:none;
   top: 50%;
   transform: translateY(-50%);
-  padding:var(--arrow-button-size)
+  padding:var(--arrow-button-size);
+  margin:var(--arrow-button-margin);
+  background-color: var(--arrow-button-background-color);
+
+}
+
+.arrow-icons {
+  fill: var(--arrow-color);
 }
 
 .arrow-button.arrow-button-border{

@@ -91,6 +91,12 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--arrow-button-size' as string]:
       props.arrowButtonSize &&
       calculatePaddingNavigation(props.arrowButtonSize),
+    ['--arrow-button-margin' as string]:
+      props.arrowButtonMargin &&
+      calculatePaddingNavigation(props.arrowButtonMargin),
+    ['--arrow-button-background-color' as string]:
+      props.arrowButtonBackgroundColor,
+    ['--arrow-color' as string]: props.arrowColor,
   };
 
   const toggleTab = useCallback(

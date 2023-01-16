@@ -96,17 +96,20 @@ export const SmallCarousel = () => (
     mobileFontSize={12}
     dotBorder={2}
     dotBorderColor={'#212121'}
-    navigationBorder={true}
+    // navigationBorder={true}
     navigationBorderSize={2}
     navigationBorderColor={'#212121'}
     arrowButtonsBorder={true}
-    arrowButtonsBorderSize={2}
-    arrowButtonsColor={'#212121'}
+    arrowButtonsBorderSize={1}
+    arrowButtonsColor={'#eee'}
     // contentBorder={true}
     // contentBordersSize={2}
     // contentBordersColor={'#212121'}
     arrowButtonBorderRadius={25}
-    arrowButtonSize={'0 4'}
+    arrowButtonSize={'0 0'}
+    arrowButtonMargin={'10 4'}
+    arrowButtonBackgroundColor={'red'}
+    arrowColor={'blue'}
   />
 );
 
