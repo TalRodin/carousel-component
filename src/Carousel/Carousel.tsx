@@ -54,8 +54,9 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--dotColor' as string]: props.dotColor,
     ['--dotColorHover' as string]: props.dotColorHover,
     ['--dotColorActive' as string]: props.dotColorActive,
-    ['--dotMargin' as string]:
-      props.dotMargin && calculateMarginDotNavigation(props.dotMargin),
+    ['--dotMargin' as string]: props.dotMargin
+      ? calculateMarginDotNavigation(props.dotMargin)
+      : calculateMarginDotNavigation('2 2'),
     ['--textWidth' as string]: props.textWidth + 'vw',
     ['--textHeight' as string]: props.textHeight + 'vh',
     ['--text-content-padding' as string]: props.textContentPadding + 'px',
@@ -71,7 +72,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--mobile-number-grid-columns' as string]: props.mobileNumberGridColumns,
     ['--dotMarginMobile' as string]: props.dotMarginMobile
       ? calculateMarginDotNavigation(props.dotMarginMobile)
-      : calculateMarginDotNavigation(props.dotMargin),
+      : calculateMarginDotNavigation(props.dotMargin || '2 2'),
     ['--font-size' as string]: props.fontSize + 'px',
     ['--mobile-font-size' as string]: props.mobileFontSize
       ? props.mobileFontSize + 'px'

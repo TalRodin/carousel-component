@@ -73,7 +73,7 @@ export const SmallCarousel = () => (
     dotColorHover={'#eeeeee'}
     dotColorActive={'#fff'}
     dotMargin={'2 1'}
-    dotMarginMobile={'4 1'}
+    // dotMarginMobile={'4 1'}
     tabsData={tabsData}
     textPosition={'top-center'}
     textWidth={49.5}
