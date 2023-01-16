@@ -36,7 +36,7 @@ export interface CarouselComponentProps {
   contentDirection?: string;
   tearFile?: string;
   splitImageAlignment?: string;
-  arrowNavigation: boolean;
+  arrowNavigation?: boolean;
   mobileTextWidth?: number;
   mobileTextHeight?: number;
   mobileContentDirection?: string;
