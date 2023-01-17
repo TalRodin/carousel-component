@@ -21,6 +21,8 @@ const tabsData = [
       '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p></div>',
     imgHorizontalPoint: 'right',
     imgVerticalPoint: 'bottom',
+    imgHorizontalPointMobile: 'center',
+    imgVerticalPointMobile: 'top',
   },
   {
     tabLabel: 'Project',

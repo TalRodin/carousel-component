@@ -7,7 +7,7 @@ const FunctionComponent = () => {
     <div className='function-wrapper'>
       {numberCards.map((el, i) => {
         return (
-          <div key={i} className='card'>
+          <div key={i} className='card' tabIndex={0}>
             {el}
           </div>
         );

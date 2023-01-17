@@ -49,17 +49,19 @@ const tabsData = [
 
 Tabs Data accepts:
 
-| Name                   | Type                            |
-| ---------------------- | ------------------------------- |
-| **tabLabel**           | string                          |
-| **color**              | string                          |
-| **image**              | string                          |
-| **video**              | string                          |
-| **text**               | string                          |
-| **htmlContent**        | string                          |
-| **imgHorizontalPoint** | string: 'left','center','right' |
-| **imgVerticalPoint**   | string: 'top','center','bottom' |
-| **component**          | Ex.: component: nameOfComponent |
+| Name                         | Type                            |
+| ---------------------------- | ------------------------------- |
+| **tabLabel**                 | string                          |
+| **color**                    | string                          |
+| **image**                    | string                          |
+| **video**                    | string                          |
+| **text**                     | string                          |
+| **htmlContent**              | string                          |
+| **imgHorizontalPoint**       | string: 'left','center','right' |
+| **imgVerticalPoint**         | string: 'top','center','bottom' |
+| **imgHorizontalPointMobile** | string: 'left','center','right' |
+| **imgVerticalPointMobile**   | string: 'top','center','bottom' |
+| **component**                | Ex.: component: nameOfComponent |
 
 Example:
 
