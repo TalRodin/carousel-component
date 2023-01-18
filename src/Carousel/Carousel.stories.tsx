@@ -18,7 +18,7 @@ const tabsData = [
       'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.',
     htmlContent:
-      '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p></div>',
+      '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p><div><button>Button</button></div></div>',
     imgHorizontalPoint: 'right',
     imgVerticalPoint: 'bottom',
     imgHorizontalPointMobile: 'center',
@@ -29,17 +29,19 @@ const tabsData = [
     color: '#fff',
     video:
       'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-    text: '',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.',
+    htmlContent:
+      '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p><button>Button</button></div>',
   },
   {
     tabLabel: 'Random',
     color: '#fff',
     image:
       'https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80',
-    component: FunctionComponent,
+    // component: FunctionComponent,
     text: 'Lorem ipsum dolor sit ametMaecenas pretium molestie dui ac consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.',
     htmlContent:
-      '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p></div>',
+      '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p><div><button>Button</button></div></div>',
   },
   {
     tabLabel: 'Random',
@@ -47,6 +49,8 @@ const tabsData = [
     image:
       'https://images.unsplash.com/photo-1623141629340-4686d65d60bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.',
+    htmlContent:
+      '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p><button>Button</button></div>',
   },
   {
     tabLabel: 'Random',
@@ -56,6 +60,8 @@ const tabsData = [
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     imgHorizontalPoint: 'left',
     imgVerticalPoint: 'top',
+    htmlContent:
+      '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p></div>',
   },
 ];
 
@@ -64,7 +70,7 @@ export const SmallCarousel = () => (
     width={50}
     height={60}
     mobileHeight={40}
-    borderRadius={0}
+    borderRadius={12}
     mobileBorderRadius={1}
     navigation={true}
     navigationPosition={'bottom'}

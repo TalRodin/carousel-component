@@ -10,7 +10,7 @@ import {
 } from './helper/helper';
 
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
-  const [prevTab, setPreviousTab] = useState<number>(0);
+  const [prevTab, setPreviousTab] = useState<number>();
   const [currentTab, setCurrentTab] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const navigationRef = useRef<HTMLDivElement>(null);
@@ -34,6 +34,29 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
+  // useEffect(() => {
+  //   focusableTabs?.forEach((el, i) => {
+  //     if (i != currentTab) {
+  //       let allEl = focusableTabs[i]
+  //         ?.querySelectorAll(
+  //           'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+  //         )
+
+  //         .forEach((el, i) => {
+  //           el.setAttribute('tabIndex', '-1');
+  //         });
+  //     }
+  //     if (i == currentTab) {
+  //       focusableTabs[currentTab]
+  //         ?.querySelectorAll(
+  //           'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+  //         )
+  //         .forEach((el, i) => {
+  //           el.setAttribute('tabIndex', '0');
+  //         });
+  //     }
+  //   });
+  // }, [focusableTabs]);
   const styleCarousel = {
     ['--width' as string]: props.width + 'vw',
     ['--height' as string]: props.height + 'vh',
@@ -224,7 +247,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   }, [typeWindow, currentTab]);
 
   useEffect(() => {
-    if (props.navigation) {
+    if (props.navigation && focusableTabs) {
       let focusEl;
       if (contentLoaded == true) {
         focusEl = Array.from(
@@ -232,10 +255,31 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
             'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
           )
         ).filter(
-          (el) =>
+          (el: any) =>
             !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
         );
       }
+      focusableTabs?.forEach((el: any, i: number) => {
+        if (i != currentTab) {
+          let allEl = focusableTabs[i]
+            ?.querySelectorAll(
+              'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+            )
+
+            .forEach((el, i: number) => {
+              el.setAttribute('tabIndex', '-1');
+            });
+        }
+        if (i == currentTab) {
+          focusableTabs[currentTab]
+            ?.querySelectorAll(
+              'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+            )
+            .forEach((el: any, i: number) => {
+              el.setAttribute('tabIndex', '0');
+            });
+        }
+      });
       let prevButt;
       navigationRef.current.addEventListener(
         'keydown',
@@ -331,8 +375,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
               <div
                 className={`text ${props.contentBorder && 'content-border'}`}
                 ref={contentRef}
-                hidden={currentTab !== index}
-                aria-hidden={currentTab !== index}
               >
                 <div
                   className={`text-content ${
