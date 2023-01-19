@@ -38,7 +38,7 @@ const tabsData = [
     color: '#fff',
     image:
       'https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80',
-    // component: FunctionComponent,
+    component: FunctionComponent,
     text: 'Lorem ipsum dolor sit ametMaecenas pretium molestie dui ac consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium molestie dui ac consequat.',
     htmlContent:
       '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p><a href="https://github.com/TalRodin">Link</a></p><div><button>Button</button></div></div>',

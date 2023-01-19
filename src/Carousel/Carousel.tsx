@@ -409,7 +409,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
                     ></div>
                   )}
                 </div>
-                <div>{tab.component && <tab.component />}</div>
+                {tab.component && <tab.component />}
               </div>
             </div>
           ))}
