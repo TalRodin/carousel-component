@@ -34,29 +34,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
-  // useEffect(() => {
-  //   focusableTabs?.forEach((el, i) => {
-  //     if (i != currentTab) {
-  //       let allEl = focusableTabs[i]
-  //         ?.querySelectorAll(
-  //           'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-  //         )
-
-  //         .forEach((el, i) => {
-  //           el.setAttribute('tabIndex', '-1');
-  //         });
-  //     }
-  //     if (i == currentTab) {
-  //       focusableTabs[currentTab]
-  //         ?.querySelectorAll(
-  //           'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-  //         )
-  //         .forEach((el, i) => {
-  //           el.setAttribute('tabIndex', '0');
-  //         });
-  //     }
-  //   });
-  // }, [focusableTabs]);
   const styleCarousel = {
     ['--width' as string]: props.width + 'vw',
     ['--height' as string]: props.height + 'vh',
