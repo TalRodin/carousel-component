@@ -107,6 +107,7 @@
     border: var(--dot-border) solid var(--dot-border-color);
     border-radius: var(--dotRadius);
     margin:var(--dotMargin); 
+    cursor: pointer;
 }
 .control-card.is-active{
   background-color: var(--dotColorActive);
@@ -331,7 +332,7 @@
   padding:var(--arrow-button-size);
   margin:var(--arrow-button-margin);
   background-color: var(--arrow-button-background-color);
-
+  cursor:pointer;
 }
 
 .arrow-icons {
