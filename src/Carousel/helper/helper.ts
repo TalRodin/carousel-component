@@ -1,14 +1,20 @@
 export const calculateMarginDotNavigation=(v:string)=>{
-    return v.split(' ')
-    .map((v: string) => {
-      return v + 'vw';
-    })
-    .join(' ')
+
+       return  v.split(' ')
+        .map((v: string) => {
+          return v + 'vw';
+        })
+        .join(' ') 
+     
+    
 }
 export const calculatePaddingNavigation=(v:string)=>{
-    return v.split(' ')
+
+    return  v.split(' ')
     .map((v: string) => {
       return v + 'px';
     })
-    .join(' ')
+    .join(' ') 
+
+
 }
