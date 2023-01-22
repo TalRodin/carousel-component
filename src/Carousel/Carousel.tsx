@@ -34,10 +34,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
-  useEffect(() => {
-    console.log(props.widthOfMask);
-  }, []);
-
   const styleCarousel = {
     ['--width' as string]: props.width + 'vw',
     ['--height' as string]: props.height + 'vh',
