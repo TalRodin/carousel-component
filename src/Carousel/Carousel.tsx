@@ -34,6 +34,10 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
+  useEffect(() => {
+    console.log(props.widthOfMask);
+  }, []);
+
   const styleCarousel = {
     ['--width' as string]: props.width + 'vw',
     ['--height' as string]: props.height + 'vh',
@@ -97,6 +101,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--arrow-button-background-color' as string]:
       props.arrowButtonBackgroundColor,
     ['--arrow-color' as string]: props.arrowColor,
+    ['--width-of-mask' as string]: props.widthOfMask + 'px',
   };
 
   const toggleTab = useCallback(

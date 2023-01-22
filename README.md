@@ -146,6 +146,7 @@ Example:
   | ----------------------- | ----------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
   | **splitImageAlignment** |             | 'top', 'bottom', 'left', 'right' | _Mask image alignment._                                                                                                                                                                                                |
   | **tearFile**            |             | string                           | _Import image .png as `import nameYourImage from path/imageFile.png` in your component and insert into `<CarouselComponent tearFile={nameYourImage}/>`. Example of image please take in the src/Carousel/images file._ |
+  | **widthOfMask**         |             | number                           | _Width of the mask. Available for 'left' and 'right mask currently._                                                                                                                                                   |
 
 - Background position (Ex.: image, video)
 

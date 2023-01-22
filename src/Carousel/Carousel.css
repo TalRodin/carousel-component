@@ -137,16 +137,18 @@
 .image-card.has-tear{
   mask-repeat: no-repeat repeat;
   -webkit-mask-repeat: no-repeat repeat;
+
 }
 .image-card.has-tear.is-aligned-left{
   mask-size: 100px 100%, calc(100% - 43px) 100%;
-  -webkit-mask-size: 44px 100%, calc(100% - 43px) 100%;
+  -webkit-mask-size: var(--width-of-mask) 100%, calc(100% - var(--width-of-mask)) 100%;
   mask-position: left center , top right;
   -webkit-mask-position: left center ,  top right;
+  
 }
 .image-card.has-tear.is-aligned-right{
   mask-size: 100px 100%, calc(100% - 43px) 100%;
-  -webkit-mask-size: 44px 100%, calc(100% - 43px) 100%;
+  -webkit-mask-size: var(--width-of-mask) 100%, calc(100% - var(--width-of-mask)) 100%;
   mask-position: center right, top left;
   -webkit-mask-position:  center right ,  top left;
 }
