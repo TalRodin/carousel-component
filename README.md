@@ -5,13 +5,20 @@
 ## Table of contents
 
 - [Carousel Component Library](#project-name)
+  - [Examples (more are coming)](#examples)
   - [Table of contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Properties](#properties)
   - [License](#license)
 
+## Examples
+
+1. [Image carousel](https://chic-palmier-8a53ae.netlify.app/)
+
 ## Installation
+
+[gallery-ar-component](https://www.npmjs.com/package/gallery-ar-component)
 
 To install and set up the library, run:
 
