@@ -47,7 +47,9 @@ export default {
 } as ComponentMeta<typeof ArrowButton>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof ArrowButton> = (args) => (
-  <ArrowButton {...args} />
+  <div style={{ height: '100%' }}>
+    <ArrowButton {...args} />
+  </div>
 );
 export const ArrowButtonPrimary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
