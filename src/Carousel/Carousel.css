@@ -12,8 +12,9 @@
        border-radius: var(--borderRadius);
        -webkit-border-radius: var(--borderRadius);
        -moz-border-radius: var(--borderRadius);
+       mask-image: -webkit-radial-gradient(white, black);
+       -webkit-mask-image: -webkit-radial-gradient(white, black);
        overflow: hidden;   
-
 }
 
 .slides-card{
@@ -361,6 +362,8 @@
     border-radius: var(--mobileBorderRadius);
     -webkit-border-radius: var(--mobileBorderRadius);
     -moz-border-radius: var(--mobileBorderRadius);
+    mask-image: -webkit-radial-gradient(white, black);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
   .control-card{
       margin:var(--dotMarginMobile)
