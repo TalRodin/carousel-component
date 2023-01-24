@@ -32,8 +32,9 @@ const ArrowButton = ({
     ['--arrow-color' as string]: arrowColor,
   };
   return (
-    <div style={styleButton}>
+    <>
       <button
+        style={styleButton}
         className={`arrow-button left ${
           arrowButtonsBorder && 'arrow-button-border'
         }`}
@@ -43,6 +44,7 @@ const ArrowButton = ({
         <BackIcon />
       </button>
       <button
+        style={styleButton}
         className={`arrow-button right ${
           arrowButtonsBorder && 'arrow-button-border'
         }`}
@@ -51,7 +53,7 @@ const ArrowButton = ({
       >
         <ForwardIcon />
       </button>
-    </div>
+    </>
   );
 };
 
