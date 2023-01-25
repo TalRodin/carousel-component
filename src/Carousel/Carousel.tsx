@@ -2,12 +2,11 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import { CarouselComponentProps } from './Carousel.types';
 import './Carousel.css';
-import BackIcon from './svg/backIcon';
-import ForwardIcon from './svg/forwardIcon';
 import {
   calculateMarginDotNavigation,
   calculatePaddingNavigation,
 } from './helper/helper';
+import ArrowButton from './ArrowButton';
 
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>();
@@ -81,22 +80,8 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--dot-border-color' as string]: props.dotBorderColor,
     ['--navigation-border-size' as string]: props.navigationBorderSize + 'px',
     ['--navigation-border-color' as string]: props.navigationBorderColor,
-    ['--arrow-button-border-size' as string]:
-      props.arrowButtonsBorderSize + 'px',
-    ['--arrow-button-color' as string]: props.arrowButtonsColor,
     ['--content-borders-size' as string]: props.contentBordersSize + 'px',
     ['--content-borders-color' as string]: props.contentBordersColor,
-    ['--arrow-button-border-radius' as string]:
-      props.arrowButtonBorderRadius + 'px',
-    ['--arrow-button-size' as string]:
-      props.arrowButtonSize &&
-      calculatePaddingNavigation(props.arrowButtonSize),
-    ['--arrow-button-margin' as string]:
-      props.arrowButtonMargin &&
-      calculatePaddingNavigation(props.arrowButtonMargin),
-    ['--arrow-button-background-color' as string]:
-      props.arrowButtonBackgroundColor,
-    ['--arrow-color' as string]: props.arrowColor,
     ['--width-of-mask' as string]: props.widthOfMask + 'px',
   };
 
@@ -304,27 +289,18 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     <div style={styleCarousel} className='carousel-wrapper'>
       <div className={containerTear} ref={containerRef}>
         {props.arrowNavigation && (
-          <>
-            {' '}
-            <button
-              className={`arrow-button left ${
-                props.arrowButtonsBorder && 'arrow-button-border'
-              }`}
-              onClick={toggleArrowLeftButton}
-              tabIndex={1}
-            >
-              <BackIcon />
-            </button>
-            <button
-              className={`arrow-button right ${
-                props.arrowButtonsBorder && 'arrow-button-border'
-              }`}
-              onClick={toggleArrowRightButton}
-              tabIndex={1}
-            >
-              <ForwardIcon />
-            </button>
-          </>
+          <ArrowButton
+            arrowButtonsBorder={props.arrowButtonsBorder}
+            toggleArrowLeftButton={toggleArrowLeftButton}
+            toggleArrowRightButton={toggleArrowRightButton}
+            arrowButtonSize={props.arrowButtonSize}
+            arrowButtonBackgroundColor={props.arrowButtonBackgroundColor}
+            arrowButtonsBorderSize={props.arrowButtonsBorderSize}
+            arrowButtonsColor={props.arrowButtonsColor}
+            arrowButtonBorderRadius={props.arrowButtonBorderRadius}
+            arrowButtonMargin={props.arrowButtonMargin}
+            arrowColor={props.arrowColor}
+          />
         )}
 
         <div className='slides-card'>
