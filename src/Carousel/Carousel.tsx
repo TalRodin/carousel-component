@@ -396,9 +396,11 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
           <div
             className={
               props.tabsData.length > 1
-                ? `nav-card ${props.navigationPosition} ${
-                    props.navigationBorder && 'navigation-border'
-                  }`
+                ? `nav-card ${
+                    typeWindow === 'mobile' && props.mobileNavigationPosition
+                      ? props.mobileNavigationPosition
+                      : props.navigationPosition
+                  } ${props.navigationBorder && 'navigation-border'}`
                 : 'empty-nav'
             }
             ref={navigationRef}

@@ -75,6 +75,7 @@ export const SmallCarousel = () => (
     mobileBorderRadius={12}
     navigation={true}
     navigationPosition={'bottom'}
+    // mobileNavigationPosition={'top'}
     dotSize={3}
     mobileDotSize={2}
     dotRadius={50}

@@ -18,6 +18,7 @@ export interface CarouselComponentProps {
   mobileWidth?: number;
   mobileHeight?: number;
   navigationPosition?: string;
+  mobileNavigationPosition?:string;
   borderRadius?: number;
   mobileBorderRadius?: number;
   dotSize?: number;
