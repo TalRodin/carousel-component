@@ -5,13 +5,20 @@
 ## Table of contents
 
 - [Carousel Component Library](#project-name)
+  - [Examples (more are coming)](#examples)
   - [Table of contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Properties](#properties)
   - [License](#license)
 
+## Examples
+
+1. [Image carousel](https://chic-palmier-8a53ae.netlify.app/)
+
 ## Installation
+
+[gallery-ar-component](https://www.npmjs.com/package/gallery-ar-component)
 
 To install and set up the library, run:
 
@@ -153,6 +160,7 @@ Example:
   | ----------------------- | ----------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
   | **splitImageAlignment** |             | 'top', 'bottom', 'left', 'right' | _Mask image alignment._                                                                                                                                                                                                |
   | **tearFile**            |             | string                           | _Import image .png as `import nameYourImage from path/imageFile.png` in your component and insert into `<CarouselComponent tearFile={nameYourImage}/>`. Example of image please take in the src/Carousel/images file._ |
+  | **widthOfMask**         |             | number                           | _Width of the mask. Available for 'left' and 'right mask currently._                                                                                                                                                   |
 
 - Background position (Ex.: image, video)
 

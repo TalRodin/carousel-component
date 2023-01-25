@@ -64,6 +64,7 @@ export interface CarouselComponentProps {
   arrowButtonMargin?:string;
   arrowButtonBackgroundColor?:string;
   arrowColor?:string;
+  widthOfMask?:number;
 }
 
 

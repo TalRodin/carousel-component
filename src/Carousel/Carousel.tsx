@@ -82,6 +82,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
     ['--navigation-border-color' as string]: props.navigationBorderColor,
     ['--content-borders-size' as string]: props.contentBordersSize + 'px',
     ['--content-borders-color' as string]: props.contentBordersColor,
+    ['--width-of-mask' as string]: props.widthOfMask + 'px',
   };
 
   const toggleTab = useCallback(

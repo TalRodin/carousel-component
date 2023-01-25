@@ -12,8 +12,9 @@
        border-radius: var(--borderRadius);
        -webkit-border-radius: var(--borderRadius);
        -moz-border-radius: var(--borderRadius);
+       mask-image: -webkit-radial-gradient(white, black);
+       -webkit-mask-image: -webkit-radial-gradient(white, black);
        overflow: hidden;   
-
 }
 
 .slides-card{
@@ -107,6 +108,7 @@
     border: var(--dot-border) solid var(--dot-border-color);
     border-radius: var(--dotRadius);
     margin:var(--dotMargin); 
+    cursor: pointer;
 }
 .control-card.is-active{
   background-color: var(--dotColorActive);
@@ -136,16 +138,18 @@
 .image-card.has-tear{
   mask-repeat: no-repeat repeat;
   -webkit-mask-repeat: no-repeat repeat;
+
 }
 .image-card.has-tear.is-aligned-left{
   mask-size: 100px 100%, calc(100% - 43px) 100%;
-  -webkit-mask-size: 44px 100%, calc(100% - 43px) 100%;
+  -webkit-mask-size: var(--width-of-mask) 100%, calc(100% - var(--width-of-mask)) 100%;
   mask-position: left center , top right;
   -webkit-mask-position: left center ,  top right;
+  
 }
 .image-card.has-tear.is-aligned-right{
   mask-size: 100px 100%, calc(100% - 43px) 100%;
-  -webkit-mask-size: 44px 100%, calc(100% - 43px) 100%;
+  -webkit-mask-size: var(--width-of-mask) 100%, calc(100% - var(--width-of-mask)) 100%;
   mask-position: center right, top left;
   -webkit-mask-position:  center right ,  top left;
 }
@@ -331,7 +335,7 @@
   padding:var(--arrow-button-size);
   margin:var(--arrow-button-margin);
   background-color: var(--arrow-button-background-color);
-
+  cursor:pointer;
 }
 
 
@@ -359,6 +363,8 @@
     border-radius: var(--mobileBorderRadius);
     -webkit-border-radius: var(--mobileBorderRadius);
     -moz-border-radius: var(--mobileBorderRadius);
+    mask-image: -webkit-radial-gradient(white, black);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
   .control-card{
       margin:var(--dotMarginMobile)

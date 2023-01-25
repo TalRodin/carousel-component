@@ -4,6 +4,7 @@ import vectorImg from './images/vector.png';
 import vectorImgRight from './images/vector-right.png';
 import vectorImgTop from './images/vector-top.png';
 import vectorImgBottom from './images/vector-bottom.png';
+import cute from './images/cute.png';
 import FunctionComponent from './exampleFunctionComponent/FunctionComponent';
 
 export default {
@@ -71,7 +72,7 @@ export const SmallCarousel = () => (
     height={60}
     mobileHeight={40}
     borderRadius={12}
-    mobileBorderRadius={1}
+    mobileBorderRadius={12}
     navigation={true}
     navigationPosition={'bottom'}
     dotSize={3}
@@ -118,6 +119,9 @@ export const SmallCarousel = () => (
     arrowButtonMargin={'10 4'}
     arrowButtonBackgroundColor={'red'}
     arrowColor={'blue'}
+    // tearFile={vectorImgTop}
+    // splitImageAlignment={'top'}
+    widthOfMask={200}
   />
 );
 
