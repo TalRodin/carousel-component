@@ -385,13 +385,13 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
               props.tabsData.map((tab, index) => (
                 <button
                   aria-selected={index === currentTab}
-                  aria-controls={`tab-panel-${index}`}
+                  aria-controls={`tab-${index}`}
                   data-index={index}
                   id={`tab-${index}`}
                   key={`button-${index}`}
                   onClick={toggleTab}
                   role='tab'
-                  type='button'
+                  title='button'
                   className={`control-card ${
                     index === currentTab ? 'is-active' : ''
                   }`}

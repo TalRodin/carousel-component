@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import BackIcon from './svg/backIcon';
 import ForwardIcon from './svg/forwardIcon';
 import './Carousel.css';
@@ -39,7 +39,9 @@ const ArrowButton = ({
           arrowButtonsBorder && 'arrow-button-border'
         }`}
         onClick={toggleArrowLeftButton}
-        tabIndex={1}
+        tabIndex={0}
+        title='button'
+        id='back-button'
       >
         <BackIcon />
       </button>
@@ -49,7 +51,9 @@ const ArrowButton = ({
           arrowButtonsBorder && 'arrow-button-border'
         }`}
         onClick={toggleArrowRightButton}
-        tabIndex={1}
+        tabIndex={0}
+        title='button'
+        id='forward-button'
       >
         <ForwardIcon />
       </button>
