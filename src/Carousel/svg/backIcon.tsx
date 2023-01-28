@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Carousel.css';
+import '../ArrowButton.css';
 const BackIcon = () => {
   return (
     <svg

@@ -285,6 +285,14 @@
   background-position-y: bottom;
 }
 
+.video-wrapper{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+
 @media screen and (max-width: 600px) {
   .bg-mobile-horizontal-left {
     background-position-x: left;
@@ -309,56 +317,16 @@
   .bg-mobile-vertical-bottom {
     background-position-y: bottom;
   }
+
   .carousel-wrapper{
     width:var(--mobile-width);
     height:var(--mobile-height);
   }
 
-}
-
-.video-wrapper{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-}
-
-
-.arrow-button{
-  display: flex;
-  position: absolute;
-  z-index: 999;
-  background: none;
-  border:none;
-  top: 50%;
-  transform: translateY(-50%);
-  padding:var(--arrow-button-size);
-  margin:var(--arrow-button-margin);
-  background-color: var(--arrow-button-background-color);
-  cursor:pointer;
-}
-
-
-.arrow-icons {
-  fill: var(--arrow-color);
-}
-
-.arrow-button.arrow-button-border{
-  border:var(--arrow-button-border-size) solid var(--arrow-button-color) ;
-  border-radius: var(--arrow-button-border-radius);
-}
-.arrow-button.left{
-  align-items: center;  
-}
-.arrow-button.right{
-  align-items: center;
-  right:0;
-}
-
-@media screen and (max-width: 600px) {
   .carousel-wrapper{
-      width:100vw;
+    width:100vw;
   }
+
   .image-card{
     border-radius: var(--mobileBorderRadius);
     -webkit-border-radius: var(--mobileBorderRadius);
@@ -366,26 +334,28 @@
     mask-image: -webkit-radial-gradient(white, black);
     -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
+
   .control-card{
       margin:var(--dotMarginMobile)
   }
+
   .text{
     width: var(--mobileTextWidth);
     height: var(--mobileTextHeight);
   }
 
-
   .text.content-border{
       border: var(--content-borders-size) solid var(--content-borders-color);
-    }
-  
+  }
 
   .text-content{
     flex-direction:var(--mobile-content-direction);
   }
+
   .text-content.grid{
     grid-template-columns: repeat(var(--mobile-number-grid-columns), 1fr);
   }
+
   .text-content.flex{
     flex-direction: var(--mobile-content-direction);
   }
@@ -393,18 +363,23 @@
   .txt-content.row{
     margin:0vw 1vw 0vw 0vw ;
   }
+
   .txt-content.column{
     margin:0vw  0vw 1vw 0vw ;
   }
+
   .html-content.row{
     margin:0vw 0vw 0vw 1vw;
   }
+
   .html-content.column{
     margin:1vw 0vw 0vw 0vw ;
   }
+
   .control-card{
     padding:var(--mobileDotSize);
   }
+
   .text-content {
     font-size: var(--mobile-font-size);
   }

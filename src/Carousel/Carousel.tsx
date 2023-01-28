@@ -7,6 +7,7 @@ import {
   calculatePaddingNavigation,
 } from './helper/helper';
 import ArrowButton from './ArrowButton';
+import DotButton from './DotButton';
 
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>();
@@ -302,7 +303,6 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
             arrowColor={props.arrowColor}
           />
         )}
-
         <div className='slides-card'>
           {props.tabsData.map((tab, index) => (
             <div
@@ -368,7 +368,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
             </div>
           ))}
         </div>
-        {props.navigation && (
+        {props.navigation && props.tabsData && (
           <div
             className={
               props.tabsData.length > 1
