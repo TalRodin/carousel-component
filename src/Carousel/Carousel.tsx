@@ -7,7 +7,6 @@ import {
   calculatePaddingNavigation,
 } from './helper/helper';
 import ArrowButton from './ArrowButton';
-import DotButton from './DotButton';
 
 const CarouselComponent: React.FC<CarouselComponentProps> = (props) => {
   const [prevTab, setPreviousTab] = useState<number>();
